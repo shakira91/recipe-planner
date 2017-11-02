@@ -20,5 +20,5 @@
     <input type="text" class="form-control" id="qThree" required formControlName="qThree">
   </div>
   
-  <button type="submit" class="contact-button">Submit</button>
+  <button type="submit" [disabled]="!quizForm.valid" class="btn">Submit</button>
 </form>
