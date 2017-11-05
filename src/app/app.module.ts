@@ -16,7 +16,7 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
   ],
   imports: [
   	RouterModule.forRoot([
-  		 { path: 'recipes', component: RecipeListComponent },
+  		 { path: 'recipes/:id', component: RecipeListComponent },
   		 { path: '', component: QuestionsComponent }
   	]),
     BrowserModule,

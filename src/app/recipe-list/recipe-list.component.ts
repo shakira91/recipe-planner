@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpService } from '../shared/http.service';
 import { Http, Response, RequestOptions, Headers, Jsonp} from '@angular/http';
 import 'rxjs/Rx';
@@ -9,16 +9,11 @@ import 'rxjs/Rx';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  //recipesReturned: any;
 
   constructor(private http: HttpService) { }
 
   ngOnInit() {
- 	this.http.sendRequest(null, null, null).subscribe(
- 		(data) => {
- 			console.log(data)
- 		}
- 	)
+ 	
   }
 
 }

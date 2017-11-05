@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpService } from '../shared/http.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,9 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-  quizForm: FormGroup; 
+  quizForm: FormGroup;
+  recipes: any;
 
-  constructor(private http: HttpService, private router: Router) { }
+  constructor(private http: HttpService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   	this.quizForm = new FormGroup({
@@ -24,8 +25,14 @@ export class QuestionsComponent implements OnInit {
 
   onSubmit() {
   	//console.log(this.quizForm.value);
-  	this.http.sendRequest(this.quizForm.value.qOne, this.quizForm.value.qTwo, this.quizForm.value.qThree);
-  	this.router.navigate(['/recipes']);
+  	this.http.callRecipes(this.quizForm.value.qOne, this.quizForm.value.qTwo, this.quizForm.value.qThree)
+  	.subscribe(
+  		(data: any) => {
+  			this.router.navigate(['/recipes/diet=' + data.params.diet + '&ingr=' + data.params.ingr + '&q=' + data.params.q]);	
+  		} 
+
+  	);
+  	
   }
 
 }
