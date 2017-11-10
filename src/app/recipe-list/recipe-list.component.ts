@@ -17,8 +17,8 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
   	this.http.callRecipes(this.route.snapshot.params.id).subscribe(
   		(data: any) => {
-  			this.recipes = data;
-  			console.log(this.recipes)
+  			this.recipes = data.hits;
+  			return this.recipes;
   		}
   	);
   }
