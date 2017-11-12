@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { HttpService } from './shared/http.service';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { RecipeDetailsComponent } from './recipe-list/recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionsComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    RecipeDetailsComponent
   ],
   imports: [
   	RouterModule.forRoot([

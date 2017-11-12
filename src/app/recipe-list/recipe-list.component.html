@@ -1,8 +1,8 @@
-<div class="col-lg-4 recipe-item" *ngFor="let recipe of recipes">
-	<div class="col-lg-6">
+<div class="col-lg-4 col-md-6 col-sm-12 recipe-item" (mouseover)=showRecipe(recipe) *ngFor="let recipe of recipes">
+	<div class="col-lg-6 col-md-6 col-sm-12">
 		<img [src]="recipe.recipe.image">
 	</div>
-	<div class="col-lg-6 recipe-preview">
+	<div class="col-lg-6 col-md-6 col-sm-12 recipe-preview">
 		 <h3><a [href]="recipe.recipe.url">{{ recipe.recipe.label }}</a></h3>
 		 <p>BLAHHHHH</p>
 	</div>

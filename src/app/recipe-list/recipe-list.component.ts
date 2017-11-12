@@ -14,6 +14,10 @@ export class RecipeListComponent implements OnInit {
 
   constructor(private http: HttpService, private route: ActivatedRoute) { }
 
+  showRecipe(recipe) {
+  	console.log(recipe)
+  }
+
   ngOnInit() {
   	this.http.callRecipes(this.route.snapshot.params.id).subscribe(
   		(data: any) => {
