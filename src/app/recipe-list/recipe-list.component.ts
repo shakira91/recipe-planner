@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../shared/http.service';
 import { Http, Response, RequestOptions, Headers, Jsonp} from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -11,11 +11,14 @@ import 'rxjs/Rx';
 })
 export class RecipeListComponent implements OnInit {
   recipes: any;
+  recipeDetail: any;
+  hovered: boolean = false;
 
   constructor(private http: HttpService, private route: ActivatedRoute) { }
 
   showRecipe(recipe) {
-  	console.log(recipe)
+  	this.hovered =  true;
+  	this.recipeDetail = recipe.recipe;
   }
 
   ngOnInit() {
