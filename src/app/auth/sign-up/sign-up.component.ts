@@ -2,14 +2,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-
 @Component({
-  selector: 'app-questions',
-  templateUrl: './questions.component.html',
-  styleUrls: ['./questions.component.css']
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css']
 })
-export class QuestionsComponent implements OnInit {
-  quizForm: FormGroup;
+export class SignUpComponent implements OnInit {
+quizForm: FormGroup;
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -22,5 +21,4 @@ export class QuestionsComponent implements OnInit {
   onSubmit() {
 	this.router.navigate(['/recipes/&q=' + this.quizForm.value.qOne]);	
   }
-
 }
