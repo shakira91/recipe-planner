@@ -3,6 +3,9 @@ const bodyparser = require('body-parser');
 const appRoutes = require('./routes/app');
 const path = require('path');
 
+const mongoose = require('mongoose');
+mongoose.connect('localhost:27017/users');
+
 const app = express();
 
 const port = process.env.PORT || 3000;
