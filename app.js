@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const appRoutes = require('./routes/app');
+const userRoutes = require('./routes/users');
 const path = require('path');
 
 const mongoose = require('mongoose');
@@ -25,7 +26,9 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use('/signup', userRoutes);
 app.use('/', appRoutes);
+
 
 app.use(function(req, res, next){
     return res.render('index');

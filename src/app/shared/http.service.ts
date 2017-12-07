@@ -22,5 +22,6 @@ export class HttpService {
 
   db(formData) {
     this.http.post('http://127.0.0.1:3000/signup', formData);
+    console.log(formData)
   }
 }
