@@ -27,6 +27,9 @@ export class SignUpComponent implements OnInit {
 
   onSubmit() {
 	this.router.navigate(['/recipes/&q=' + this.quizForm.value.qOne]);
-	this.httpService.db(this.quizForm.value);
+	this.httpService.db(this.quizForm.value).subscribe(
+    data => console.log(data),
+    error => console.log(error)
+    );
   }
 }

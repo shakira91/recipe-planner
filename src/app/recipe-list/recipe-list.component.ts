@@ -25,7 +25,6 @@ export class RecipeListComponent implements OnInit {
   	this.http.callRecipes(this.route.snapshot.params.id).subscribe(
   		(data: any) => {
   			this.recipes = data.hits;
-  			return this.recipes;
   		}
   	);
   }

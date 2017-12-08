@@ -8,7 +8,7 @@ export class HttpService {
   constructor(private http: Http) { }
 
    
-  callRecipes(params) {
+  callRecipes(params: any) {
   	const headers = new Headers();
     headers.append('Access-Control-Allow-Origin', '*');
     let options = new RequestOptions({ headers: headers });
@@ -20,8 +20,12 @@ export class HttpService {
   	});
   }
 
-  db(formData) {
-    this.http.post('http://127.0.0.1:3000/signup', formData);
-    console.log(formData)
+  db(formData: any) {
+    const body = JSON.stringify(formData);
+    const headers = new Headers({'Content-Type' : 'application/json'});
+    return this.http.post('http://127.0.0.1:3000/signup', body, {headers: headers})
+    .map((response: Response) => response.json())
+    .catch((error: Response) => Observable.throw(error.json())
+    );
   }
 }

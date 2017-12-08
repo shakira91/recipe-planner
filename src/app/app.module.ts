@@ -11,6 +11,7 @@ import { SearchRecipesComponent } from './search-recipes/search-recipes.componen
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
