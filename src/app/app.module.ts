@@ -10,6 +10,7 @@ import { RecipeDetailsComponent } from './recipe-list/recipe-details/recipe-deta
 import { SearchRecipesComponent } from './search-recipes/search-recipes.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
     RecipeDetailsComponent,
     SearchRecipesComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    UserComponent
   ],
   imports: [
   	RouterModule.forRoot([
