@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../shared/http.service';
+import { AuthServiceService } from '../auth/auth-service.service';
 import { Http, Response, RequestOptions, Headers, Jsonp} from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/Rx';
@@ -14,7 +14,7 @@ export class RecipeListComponent implements OnInit {
   recipeDetail: any;
   hovered: boolean = false;
 
-  constructor(private http: HttpService, private route: ActivatedRoute) { }
+  constructor(private authService: AuthServiceService, private route: ActivatedRoute) { }
 
   showRecipe(recipe) {
   	this.hovered =  true;
@@ -22,7 +22,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   ngOnInit() {
-  	this.http.callRecipes(this.route.snapshot.params.id).subscribe(
+  	this.authService.callRecipes(this.route.snapshot.params.id).subscribe(
   		(data: any) => {
   			this.recipes = data.hits;
   		}

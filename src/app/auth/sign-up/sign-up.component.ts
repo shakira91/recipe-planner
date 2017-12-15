@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HttpService } from '../../shared/http.service';
+import { AuthServiceService } from '../auth-service.service';
+import { User } from "../user.model";
 
 
 @Component({
@@ -12,7 +13,7 @@ import { HttpService } from '../../shared/http.service';
 export class SignUpComponent implements OnInit {
 	quizForm: FormGroup;
 
-  constructor(private router: Router, private route: ActivatedRoute, private httpService: HttpService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private authService: AuthServiceService) { }
 
   ngOnInit() {
   	this.quizForm = new FormGroup({
@@ -26,10 +27,10 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit() {
-	this.router.navigate(['/recipes/&q=' + this.quizForm.value.qOne]);
-	this.httpService.db(this.quizForm.value).subscribe(
+	this.authService.saveUser(this.quizForm.value).subscribe(
     data => console.log(data),
     error => console.log(error)
     );
+  this.router.navigate(['/recipes/&q=' + this.quizForm.value.qOne]);
   }
 }

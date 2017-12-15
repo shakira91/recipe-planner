@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Http, Response, RequestOptions, Headers, Jsonp } from '@angular/http';
 import { AppComponent } from './app.component';
-import { HttpService } from './shared/http.service';
+import { AuthServiceService } from './auth/auth-service.service';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeDetailsComponent } from './recipe-list/recipe-details/recipe-details.component';
 import { SearchRecipesComponent } from './search-recipes/search-recipes.component';
@@ -35,7 +35,7 @@ import { UserComponent } from './user/user.component';
     JsonpModule
   ],
   providers: [
-  	HttpService 	
+  	AuthServiceService 	
   ],
   bootstrap: [AppComponent]
 })
