@@ -1,4 +1,4 @@
-<form class="col-lg-8 col-md-12 col-sm-8" [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+<form class="col-lg-8 col-md-12 col-sm-8" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <h3>First Name</h3>
     <input type="text" class="form-control" id="fname" required formControlName="fname">
@@ -23,5 +23,5 @@
     <h3>Favorite Cuisine?</h3>
     <input type="text" class="form-control" id="qOne" required formControlName="qOne">
   </div>
-  <button type="submit" [disabled]="!quizForm.valid" class="btn">Submit</button>
+  <button type="submit" [disabled]="!signUpForm.valid" class="btn">Submit</button>
 </form>

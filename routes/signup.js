@@ -4,10 +4,10 @@ const bcrypt = require('bcryptjs');
 
 const User = require('../models/user');
 
-router.get('/', function(req, res, next){
-	user.find();
+// router.get('/', function(req, res, next){
+// 	user.find();
 
-});
+// });
 
 router.post('/', function(req, res, next) {
 	var user = new User({
@@ -31,5 +31,6 @@ router.post('/', function(req, res, next) {
 		})
 	});
 });
+
 
 module.exports = router;

@@ -11,12 +11,12 @@ import { User } from "../user.model";
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-	quizForm: FormGroup;
+	signUpForm: FormGroup;
 
   constructor(private router: Router, private route: ActivatedRoute, private authService: AuthServiceService) { }
 
   ngOnInit() {
-  	this.quizForm = new FormGroup({
+  	this.signUpForm = new FormGroup({
   		'fname' : new FormControl(null, Validators.required),
   		'lname' : new FormControl(null, Validators.required),
   		'username' : new FormControl(null, Validators.required),
@@ -27,10 +27,18 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit() {
-	this.authService.saveUser(this.quizForm.value).subscribe(
-    data => console.log(data),
-    error => console.log(error)
+    const user = new User (
+      this.signUpForm.value.fname,
+      this.signUpForm.value.lname,
+      this.signUpForm.value.username,
+      this.signUpForm.value.password,
+      this.signUpForm.value.email,
+      this.signUpForm.value.qOne
     );
-  this.router.navigate(['/recipes/&q=' + this.quizForm.value.qOne]);
+  	this.authService.saveUser(user).subscribe(
+      data => console.log(data),
+      error => console.log(error)
+      );
+    this.router.navigate(['/recipes/&q=' + this.signUpForm.value.qOne]);
   }
 }

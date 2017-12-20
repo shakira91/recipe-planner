@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const appRoutes = require('./routes/app');
-const userRoutes = require('./routes/users');
+const signIn = require('./routes/signin');
+const signUp = require('./routes/signup');
 const path = require('path');
 
 const mongoose = require('mongoose');
@@ -26,7 +27,8 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use('/signup', userRoutes);
+app.use('/signin', signIn);
+app.use('/signup', signUp);
 app.use('/', appRoutes);
 
 

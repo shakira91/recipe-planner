@@ -25,8 +25,10 @@ import { UserComponent } from './user/user.component';
   ],
   imports: [
   	RouterModule.forRoot([
+       { path: 'user', component: UserComponent },     
   		 { path: 'recipes/:id', component: RecipeListComponent },
-  		 { path: '', component: SignUpComponent }
+  		 { path: 'signup', component: SignUpComponent },
+       { path: '', component: SignInComponent },
   	]),
     BrowserModule,
     FormsModule,
