@@ -13,6 +13,7 @@ const User = require('../models/user');
 router.post('/', function(req, res, next) {
 	User.findOne({ username: req.body.username }, 
 		function(err, user) {
+			console.log(user)
 		if (err) {
 			return res.status(401).json({
 				title: 'An error occured',
@@ -25,7 +26,7 @@ router.post('/', function(req, res, next) {
 				error: {message: 'Log in failed'}
 			});
 		}
-		if (!bycrypt.compareSync(req.body.password, user.password)){
+		if (!bcrypt.compare(req.body.password, user.password)){
 			return res.status(401).json({
 				title: 'Log in failed',
 				error: {message: 'Log in failed'}
@@ -33,8 +34,9 @@ router.post('/', function(req, res, next) {
 		}
 		var token = jwt.sign({user: user}, 'secret', {expiresIn: 7200});
 		res.status(200).json({
-			message: 'Succes',
+			message: 'Success',
 			token: token,
+			cuisine: user.qOne,
 			userId: user._id
 		})
 	});

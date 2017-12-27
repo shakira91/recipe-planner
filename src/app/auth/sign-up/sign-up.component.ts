@@ -35,7 +35,7 @@ export class SignUpComponent implements OnInit {
       this.signUpForm.value.email,
       this.signUpForm.value.qOne
     );
-  	this.authService.saveUser(user).subscribe(
+  	this.authService.signUp(user).subscribe(
       data => console.log(data),
       error => console.log(error)
       );

@@ -21,19 +21,19 @@ export class AuthServiceService {
   	});
   }
 
-  saveUser(userData: User) {
+  signIn(userData: User) {
     const body = JSON.stringify(userData);
     const headers = new Headers({'Content-Type' : 'application/json'});
-    return this.http.post('http://127.0.0.1:3000/signup', body, {headers: headers})
+    return this.http.post('http://127.0.0.1:3000/signin', body, {headers: headers})
     .map((response: Response) => response.json())
     .catch((error: Response) => Observable.throw(error.json())
     );
   }
 
-  checkUser(userData: User) {
+  signUp(userData: User) {
   	const body = JSON.stringify(userData);
     const headers = new Headers({'Content-Type' : 'application/json'});
-    return this.http.post('http://127.0.0.1:3000/signin', body, {headers: headers})
+    return this.http.post('http://127.0.0.1:3000/signup', body, {headers: headers})
     .map((response: Response) => response.json())
     .catch((error: Response) => Observable.throw(error.json())
     );

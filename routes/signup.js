@@ -14,8 +14,8 @@ router.post('/', function(req, res, next) {
 		fname: req.body.fname,
 		lname: req.body.lname,
 		username: req.body.username,
-		password: req.body.password,
-		email: bcrypt.hashSync(req.body.email, 10),
+		password: bcrypt.hashSync(req.body.password, 10),
+		email: req.body.email,
 		qOne: req.body.qOne
 	});
 	user.save(function(err, result) {

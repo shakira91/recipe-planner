@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthServiceService } from '../auth-service.service';
-import { User } from "../user.model";
 
 @Component({
   selector: 'app-sign-in',
@@ -23,11 +22,14 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
-  	this.authService.checkUser(this.signInForm.value).subscribe(
-      data => console.log(data),
+  	this.authService.signIn(this.signInForm.value).subscribe(
+      data => {
+      	localStorage.setItem('token', data.token);
+      	localStorage.setItem('userId', data.userId);
+      	localStorage.setItem('cuisine', data.cuisine);
+      },
       error => console.log(error)
       );
-    this.router.navigate(['/user']);
   }
 
 }
