@@ -40,4 +40,12 @@ export class AuthServiceService {
 
   }
 
+  signOut() {
+  	localStorage.clear();
+  }
+
+  isLoggedIn() {
+  	return localStorage.getItem("token") !== null;
+  }
+
 }

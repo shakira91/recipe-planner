@@ -11,6 +11,7 @@ import { SearchRecipesComponent } from './search-recipes/search-recipes.componen
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -21,14 +22,14 @@ import { UserComponent } from './user/user.component';
     SearchRecipesComponent,
     SignUpComponent,
     SignInComponent,
-    UserComponent
+    UserComponent,
+    AuthComponent
   ],
   imports: [
   	RouterModule.forRoot([
        { path: 'user', component: UserComponent },     
   		 { path: 'recipes/:id', component: RecipeListComponent },
-  		 { path: 'signup', component: SignUpComponent },
-       { path: '', component: SignInComponent },
+       { path: '', component: AuthComponent },
   	]),
     BrowserModule,
     FormsModule,
