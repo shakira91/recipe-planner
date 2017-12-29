@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
 
@@ -25,11 +26,16 @@ router.post('/', function(req, res, next) {
 				error: err.message
 			})
 		}
-		res.status(201).json({
-			message: 'user saved',
-			obj: result
-		})
+		var token = jwt.sign({user: user}, 'secret', {expiresIn: 7200});
+		res.status(200).json({
+			message: 'Success',
+			token: token,
+			cuisine: user.qOne,
+			userId: user._id
+		});
+		
 	});
+
 });
 
 

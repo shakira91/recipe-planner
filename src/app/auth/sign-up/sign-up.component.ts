@@ -36,8 +36,14 @@ export class SignUpComponent implements OnInit {
       this.signUpForm.value.qOne
     );
   	this.authService.signUp(user).subscribe(
-      data => console.log(data),
-      error => console.log(error)
+      data => {
+        localStorage.setItem('token',data.token);
+        localStorage.setItem('userId', data.userId);
+        localStorage.setItem('cuisine', data.cuisine);
+      },
+      error => {
+        console.log(error)
+        }
       );
     this.router.navigate(['/recipes/&q=' + this.signUpForm.value.qOne]);
   }

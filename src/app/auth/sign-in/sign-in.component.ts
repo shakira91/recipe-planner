@@ -30,7 +30,7 @@ export class SignInComponent implements OnInit {
       },
       error => console.log(error)
       );
-  	 this.router.navigate(['/user']);
+  	 this.router.navigate(['user']);
   }
 
 }
