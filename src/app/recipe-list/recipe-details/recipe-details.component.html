@@ -1,3 +1,5 @@
 <img src="{{ details?.image }}">
 <h3>{{ details?.label }}</h3>
-<p *ngFor="let ingr of details?.ingredientLines"> {{ ingr }}</p>
+<p *ngFor="let ingr of details?.ingredientLines"> {{ ingr }}
+</p>
+<p><a (click)="addARecipe(details)">Add to your Recipes</a></p>

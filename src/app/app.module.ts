@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Http, Response, RequestOptions, Headers, Jsonp } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AuthServiceService } from './auth/auth-service.service';
+import { AddRecipeService } from './recipe-list/add-recipe.service';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeDetailsComponent } from './recipe-list/recipe-details/recipe-details.component';
 import { SearchRecipesComponent } from './search-recipes/search-recipes.component';
@@ -27,7 +28,7 @@ import { AuthComponent } from './auth/auth.component';
   ],
   imports: [
   	RouterModule.forRoot([
-       { path: 'user', component: UserComponent },     
+       { path: 'user/:id', component: UserComponent },     
   		 { path: 'recipes/:id', component: RecipeListComponent },
        { path: '', component: AuthComponent },
   	]),
@@ -38,7 +39,8 @@ import { AuthComponent } from './auth/auth.component';
     JsonpModule
   ],
   providers: [
-  	AuthServiceService 	
+  	AuthServiceService,
+    AddRecipeService 
   ],
   bootstrap: [AppComponent]
 })

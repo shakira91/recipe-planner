@@ -17,7 +17,7 @@ export class RecipeListComponent implements OnInit {
   constructor(private authService: AuthServiceService, private route: ActivatedRoute) { }
 
   showRecipe(recipe) {
-  	this.hovered =  true;
+  	this.hovered = true;
   	this.recipeDetail = recipe.recipe;
   }
 

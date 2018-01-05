@@ -3,6 +3,7 @@ const bodyparser = require('body-parser');
 const appRoutes = require('./routes/app');
 const signIn = require('./routes/signin');
 const signUp = require('./routes/signup');
+const update = require('./routes/update');
 const path = require('path');
 
 const mongoose = require('mongoose');
@@ -29,6 +30,7 @@ app.use(function (req, res, next) {
 
 app.use('/signin', signIn);
 app.use('/signup', signUp);
+app.use('/recipes', update);
 app.use('/', appRoutes);
 
 

@@ -11,6 +11,7 @@ import { AuthServiceService } from '../auth-service.service';
 export class SignInComponent implements OnInit {
 
   signInForm: FormGroup;
+  signedIn: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private authService: AuthServiceService) { }
 
@@ -19,6 +20,10 @@ export class SignInComponent implements OnInit {
   		'username' : new FormControl(null, Validators.required),
   		'password' : new FormControl(null, Validators.required),
   	});
+
+    if(this.authService.isLoggedIn()) {
+      this.router.navigate(['user']);
+    }
   }
 
   onSubmit() {
@@ -27,10 +32,11 @@ export class SignInComponent implements OnInit {
       	localStorage.setItem('token', data.token);
       	localStorage.setItem('userId', data.userId);
       	localStorage.setItem('cuisine', data.cuisine);
+        this.signedIn = true;
+        this.router.navigate(['user/' + localStorage.getItem('userId')]);
       },
       error => console.log(error)
       );
-  	 this.router.navigate(['user']);
   }
 
 }
