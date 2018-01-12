@@ -8,16 +8,19 @@ import { AuthServiceService } from '../auth/auth-service.service';
   styleUrls: ['./search-recipes.component.css']
 })
 export class SearchRecipesComponent implements OnInit {
-
+  cuisine: string;
   constructor(private auth: AuthServiceService, private router: Router) { }
 
   onSignOut() {
   	this.auth.signOut();
   	this.router.navigate(["/"]);
   }
-
+   getRecipes() {
+    this.router.navigate(['recipes/'+ localStorage.getItem('userId') +'&q='+ localStorage.getItem('cuisine')]);
+   }
 
   ngOnInit() {
+    this.cuisine = localStorage.getItem('cuisine');
   }
 
 }

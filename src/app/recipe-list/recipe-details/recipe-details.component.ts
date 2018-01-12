@@ -12,7 +12,15 @@ export class RecipeDetailsComponent implements OnInit {
   constructor(private addRecipe: AddRecipeService) { }
 
   addARecipe(details) {
-  	this.addRecipe.addRecipe(details);
+  	this.addRecipe.addRecipe(details).subscribe(
+        data => {
+        console.log(data)
+
+      },
+      error => {
+        console.log(error)
+      }
+    );
   }
 
   ngOnInit() {
