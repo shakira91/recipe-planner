@@ -31,7 +31,7 @@ app.use(function (req, res, next) {
 
 app.use('/signin', signIn);
 app.use('/signup', signUp);
-app.use('/recipes/', update);
+app.use('/recipes', update);
 app.use('/', appRoutes);
 
 

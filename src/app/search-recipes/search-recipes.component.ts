@@ -16,7 +16,7 @@ export class SearchRecipesComponent implements OnInit {
   	this.router.navigate(["/"]);
   }
    getRecipes() {
-    this.router.navigate(['recipes/'+ localStorage.getItem('userId') +'&q='+ localStorage.getItem('cuisine')]);
+    this.router.navigate(['recipes']);
    }
 
   ngOnInit() {

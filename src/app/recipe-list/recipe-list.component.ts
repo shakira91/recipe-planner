@@ -22,7 +22,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   ngOnInit() {
-  	this.authService.callRecipes(this.route.snapshot.params.id).subscribe(
+  	this.authService.callRecipes(localStorage.getItem('cuisine')).subscribe(
   		(data: any) => {
   			this.recipes = data.hits;
   		}

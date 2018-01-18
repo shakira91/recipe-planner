@@ -29,7 +29,7 @@ import { AuthComponent } from './auth/auth.component';
   imports: [
   	RouterModule.forRoot([
        { path: 'user/:id', component: UserComponent },     
-  		 { path: 'recipes/:id', component: RecipeListComponent },
+  		 { path: 'recipes', component: RecipeListComponent },
        { path: '', component: AuthComponent },
   	]),
     BrowserModule,
