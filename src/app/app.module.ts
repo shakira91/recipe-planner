@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Http, Response, RequestOptions, Headers, Jsonp } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AuthServiceService } from './auth/auth-service.service';
+import { SharedService } from './shared/shared.service';
 import { AddRecipeService } from './recipe-list/add-recipe.service';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeDetailsComponent } from './recipe-list/recipe-details/recipe-details.component';
@@ -40,7 +41,8 @@ import { AuthComponent } from './auth/auth.component';
   ],
   providers: [
   	AuthServiceService,
-    AddRecipeService 
+    AddRecipeService,
+    SharedService
   ],
   bootstrap: [AppComponent]
 })

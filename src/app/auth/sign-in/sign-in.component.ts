@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthServiceService } from '../auth-service.service';
+import { SharedService } from '../../shared/shared.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,7 +14,7 @@ export class SignInComponent implements OnInit {
   signInForm: FormGroup;
   signedIn: boolean = false;
 
-  constructor(private router: Router, private route: ActivatedRoute, private authService: AuthServiceService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private authService: AuthServiceService, private shared: SharedService) { }
 
   ngOnInit() {
   	this.signInForm = new FormGroup({
@@ -32,7 +33,7 @@ export class SignInComponent implements OnInit {
       	localStorage.setItem('token', data.token);
       	localStorage.setItem('userId', data.userId);
       	localStorage.setItem('cuisine', data.cuisine);
-        console.log(data.recipes);
+        this.shared.displayRecipes(data.recipes);
         this.signedIn = true;
         this.router.navigate(['user/' + localStorage.getItem('userId')]);
       },

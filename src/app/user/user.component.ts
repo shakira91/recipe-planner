@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthServiceService } from '../auth/auth-service.service';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-user',
@@ -7,11 +7,13 @@ import { AuthServiceService } from '../auth/auth-service.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  savedRecipes: any;
+  constructor(private shared: SharedService) { }
 
-  constructor(private auth: AuthServiceService) { }
 
   ngOnInit() {
-
+  	this.savedRecipes = this.shared.savedRecipes;
+  	console.log(this.shared.savedRecipes);
   }
 
 }

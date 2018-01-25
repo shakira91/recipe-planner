@@ -1,3 +1,9 @@
 <div class="col-lg-12 col-md-12 col-sm-12 search-recipes">
 	<app-search-recipes></app-search-recipes>
+	<div *ngFor="let recipe of savedRecipes">
+		<div>
+			<img src="{{ recipe[0] }}">
+			<p>{{ recipe[1] }}</p>
+		</div>
+	</div>
 </div>
