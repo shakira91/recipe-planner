@@ -8,8 +8,8 @@ const schema = new Schema({
 	username: { type: String, required: true, unique: true },
 	password: { type: String, required: true },
 	email: { type: String, required: true, unique: true },
-	qOne: { type: String, required: true, unique: true  },
-	recipes: { type: Object }
+	qOne: { type: String, required: true },
+	recipes: { type: Array }
 });
 
 schema.plugin(mongooseUniqueValidator);
