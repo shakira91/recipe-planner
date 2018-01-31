@@ -9,7 +9,6 @@ export class AddRecipeService {
   constructor(private http: Http) { }
 
   addRecipe(recipeDetails) {
-  	console.log(recipeDetails.image, recipeDetails.label, recipeDetails.ingredientLines);
   	const body = {	'image': recipeDetails.image, 
   					'title': recipeDetails.label,
   					'ingredients': recipeDetails.ingredientLines,

@@ -13,7 +13,6 @@ const User = require('../models/user');
 router.post('/', function(req, res, next) {
 	User.findOne({ username: req.body.username }, 
 		function(err, user) {
-			console.log(user)
 		if (err) {
 			return res.status(401).json({
 				title: 'An error occured',
@@ -38,7 +37,8 @@ router.post('/', function(req, res, next) {
 			token: token,
 			cuisine: user.qOne,
 			userId: user._id,
-			recipes: user.recipes
+			recipes: user.recipes,
+			username: user.username
 		})
 	});
 });
