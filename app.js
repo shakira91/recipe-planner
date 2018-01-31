@@ -3,7 +3,7 @@ const bodyparser = require('body-parser');
 const appRoutes = require('./routes/app');
 const signIn = require('./routes/signin');
 const signUp = require('./routes/signup');
-const update = require('./routes/update');
+const update = require('./routes/update-recipes-array');
 const user = require('./routes/user');
 const path = require('path');
 

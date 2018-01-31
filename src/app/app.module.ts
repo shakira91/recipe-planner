@@ -13,6 +13,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
 import { AuthComponent } from './auth/auth.component';
+import { EditRecipeComponent } from './user/edit-recipe/edit-recipe.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AuthComponent } from './auth/auth.component';
     SignUpComponent,
     SignInComponent,
     UserComponent,
-    AuthComponent
+    AuthComponent,
+    EditRecipeComponent
   ],
   imports: [
   	RouterModule.forRoot([

@@ -10,7 +10,15 @@ import { Observable } from 'rxjs/Observable';
 })
 export class UserComponent implements OnInit {
   savedRecipes: any;
+  editRecipeClicked: any = false;
+  editingRecipe: boolean;
+
   constructor(private http: Http) { }
+
+  editRecipe(recipe) {
+    this.editRecipeClicked = recipe;
+    this.editingRecipe = true;
+  }
 
 
   ngOnInit() {
@@ -23,7 +31,6 @@ export class UserComponent implements OnInit {
     	(data: any) => {
   			this.savedRecipes = data.recipes;
   		}, 
-
   		(error: any) => {
   			console.log(error);
   		}
