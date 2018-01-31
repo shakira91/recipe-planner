@@ -22,6 +22,10 @@ export class UserComponent implements OnInit {
     ).subscribe(
     	(data: any) => {
   			this.savedRecipes = data.recipes;
+  		}, 
+
+  		(error: any) => {
+  			console.log(error);
   		}
     );
 
