@@ -1,5 +1,13 @@
 <div>
-  <div>{{ recipeToEdit }}</div>
+<form>
+    <input type="text" name="img" [value]="recipeToEdit[0]"> <!-- fix this -->
+    <br>
+    <input type="text" name="title" [value]="recipeToEdit[1]">
+    <br>
+    <textarea [value]="recipeToEdit[2]"></textarea>  
+  </form> 
   <p><a>Stop Editing</a></p>
   <p><a>Save</a></p>
 </div>
+
+
