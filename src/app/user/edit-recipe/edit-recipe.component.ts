@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-recipe',
@@ -7,12 +9,27 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EditRecipeComponent implements OnInit {
 
-  @Input() recipeToEdit: any;
+  recipeImage: string = localStorage.getItem('recipe-image');
+  recipeTitle: string = localStorage.getItem('recipe-title');
+  recipeIngredients: string = localStorage.getItem('recipe-ingredients');
+  editForm: FormGroup; 
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
+  
+  saveEdit() {
+    this.editForm = new FormGroup({
+      title : new FormControl('title'),
+      ingredients : new FormControl('ingredients'),
+    })
+    console.log(this.editForm.value)
+  }
+
+  editingCanceled() {
+    this.router.navigate(['user/' + localStorage.getItem('userId')]);
+  }
 
   ngOnInit() {
-
+    
   }
 
 }

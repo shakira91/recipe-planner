@@ -1,16 +1,13 @@
 <div class="col-lg-12 col-md-12 col-sm-12 search-recipes">
 	<app-search-recipes></app-search-recipes>
-	<div *ngFor="let recipe of savedRecipes">
+	<div *ngFor="let recipe of savedRecipes; let i = index;">
 		<div>
 			<img src="{{ recipe[0] }}">
 			<p>{{ recipe[1] }}</p>
 			<div class="user-options">
-				<p *ngIf="editRecipeClicked !== recipe"><a (click)="editRecipe(recipe)">Edit Recipe</a></p>
+				<p><a (click)="editRecipe(recipe, i)">Edit Recipe</a></p>
 				<p><a>Add to Calendar</a></p>
 			</div>
-		</div>
-		<div class="edit-recipe" *ngIf="editRecipeClicked == recipe">
-			<app-edit-recipe [recipeToEdit]="recipe"></app-edit-recipe>
 		</div>
 	</div>
 </div>

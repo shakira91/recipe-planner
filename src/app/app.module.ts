@@ -30,7 +30,8 @@ import { EditRecipeComponent } from './user/edit-recipe/edit-recipe.component';
   ],
   imports: [
   	RouterModule.forRoot([
-       { path: 'user/:id', component: UserComponent },     
+       { path: 'user/:id', component: UserComponent }, 
+       { path: 'edit/:id', component: EditRecipeComponent },    
   		 { path: 'recipes', component: RecipeListComponent },
        { path: '', component: AuthComponent },
   	]),

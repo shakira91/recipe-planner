@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, Jsonp } from '@angular/http';
+import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
 
@@ -10,16 +11,18 @@ import { Observable } from 'rxjs/Observable';
 })
 export class UserComponent implements OnInit {
   savedRecipes: any;
-  editRecipeClicked: any = false;
-  editingRecipe: boolean;
+  editRecipeClicked: any;
+  editingRecipe: boolean = false;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
 
-  editRecipe(recipe) {
-    this.editRecipeClicked = recipe;
-    this.editingRecipe = true;
+  editRecipe(recipe, index) {
+    localStorage.setItem('recipe-index', index);
+    localStorage.setItem('recipe-image', recipe[0]);
+    localStorage.setItem('recipe-title', recipe[1]);
+    localStorage.setItem('recipe-ingredients', recipe[2]);
+    this.router.navigate(['edit/' + localStorage.getItem('userId')]);
   }
-
 
   ngOnInit() {
   	const body = { username: localStorage.getItem('username') };
@@ -29,14 +32,12 @@ export class UserComponent implements OnInit {
     .catch((error: Response) => Observable.throw(error.json())
     ).subscribe(
     	(data: any) => {
-  			this.savedRecipes = data.recipes;
+        this.savedRecipes = data.recipes;
   		}, 
   		(error: any) => {
   			console.log(error);
   		}
     );
-
   }
-
 
 }

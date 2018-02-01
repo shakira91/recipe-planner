@@ -1,13 +1,11 @@
 <div>
-<form>
-    <input type="text" name="img" [value]="recipeToEdit[0]"> <!-- fix this -->
-    <br>
-    <input type="text" name="title" [value]="recipeToEdit[1]">
-    <br>
-    <textarea [value]="recipeToEdit[2]"></textarea>  
+  <img [src]="recipeImage"> <!--upload new img-->
+  <form [formGroup]="editForm" (ngSubmit)="saveEdit()">
+      <input type="text" formControlName="title" name="title" [value]="recipeTitle">
+      <br>
+      <textarea name="ingredients" formControlName="ingredients" [value]="recipeIngredients"></textarea>
+      <br> 
+      <button [disabled]="!editForm.valid" type="submit" class="button recipe-submit">Save</button>
+      <button (click)="editingCanceled()">Cancel</button>
   </form> 
-  <p><a>Stop Editing</a></p>
-  <p><a>Save</a></p>
 </div>
-
-
