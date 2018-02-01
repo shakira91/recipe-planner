@@ -17,10 +17,6 @@ export class EditRecipeComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
   
   saveEdit() {
-    this.editForm = new FormGroup({
-      title : new FormControl('title'),
-      ingredients : new FormControl('ingredients'),
-    })
     console.log(this.editForm.value)
   }
 
@@ -29,7 +25,10 @@ export class EditRecipeComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.editForm = new FormGroup({
+      title : new FormControl(''),
+      ingredients : new FormControl(''),
+    })
   }
 
 }
