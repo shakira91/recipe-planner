@@ -26,8 +26,8 @@ export class EditRecipeComponent implements OnInit {
 
   ngOnInit() {
     this.editForm = new FormGroup({
-      title : new FormControl(''),
-      ingredients : new FormControl(''),
+      title : new FormControl(),
+      ingredients : new FormControl(),
     })
   }
 

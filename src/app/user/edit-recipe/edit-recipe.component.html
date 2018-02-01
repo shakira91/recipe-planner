@@ -5,7 +5,7 @@
       <br>
       <textarea name="ingredients" formControlName="ingredients" [value]="recipeIngredients"></textarea>
       <br> 
-      <button [disabled]="!editForm.valid" type="submit" class="button recipe-submit">Save</button>
+      <button [disabled]="!editForm.touched" type="submit" class="button recipe-submit">Save</button>
       <button (click)="editingCanceled()">Cancel</button>
   </form> 
 </div>
