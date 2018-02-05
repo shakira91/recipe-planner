@@ -37,7 +37,6 @@ export class SignUpComponent implements OnInit {
     );
   	this.authService.signUp(user).subscribe(
       data => {
-        console.log(data)
         localStorage.setItem('token',data.token);
         localStorage.setItem('userId', data.userId);
         localStorage.setItem('cuisine', data.cuisine);
@@ -47,11 +46,10 @@ export class SignUpComponent implements OnInit {
         } else {
           this.router.navigate(['user/'+ localStorage.getItem('userId')]);
         }
-
       },
       error => {
         console.log(error)
-        }
-      );
+      }
+    );
   }
 }

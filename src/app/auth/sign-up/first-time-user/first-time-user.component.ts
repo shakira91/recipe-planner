@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first-time-user.component.css']
 })
 export class FirstTimeUserComponent implements OnInit {
+  cuisine: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.cuisine = localStorage.getItem('cuisine');
    
   }
 
