@@ -9,18 +9,25 @@ import { AuthServiceService } from '../auth/auth-service.service';
 })
 export class SearchRecipesComponent implements OnInit {
   cuisine: string;
+  numberOfRecipes: any;
+  
   constructor(private auth: AuthServiceService, private router: Router) { }
 
   onSignOut() {
   	this.auth.signOut();
   	this.router.navigate(["/"]);
   }
-   getRecipes() {
+  getRecipes() {
     this.router.navigate(['recipes']);
+   }
+
+  userRecipes() {
+    this.router.navigate(['user/' + localStorage.getItem('userId')]);
    }
 
   ngOnInit() {
     this.cuisine = localStorage.getItem('cuisine');
+    this.numberOfRecipes = localStorage.getItem('recipes');
   }
 
 }

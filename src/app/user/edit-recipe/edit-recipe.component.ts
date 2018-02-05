@@ -17,7 +17,9 @@ export class EditRecipeComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
   
   saveEdit() {
-    console.log(this.editForm.value)
+    if (this.editForm.value.title && this.editForm.value.ingrediets !== null) {
+      console.log(this.editForm.value.title)
+    }
   }
 
   editingCanceled() {
@@ -26,8 +28,8 @@ export class EditRecipeComponent implements OnInit {
 
   ngOnInit() {
     this.editForm = new FormGroup({
-      title : new FormControl(),
-      ingredients : new FormControl(),
+      title : new FormControl(""),
+      ingredients : new FormControl(""),
     })
   }
 

@@ -17,10 +17,16 @@ router.post('/', function(req, res, next) {
 				error: err.message
 			});
 		}
-		res.status(200).json({
-			message: 'Success',
-			recipes: user.recipes
-		})
+		if (user.recipes === null) {
+			res.status(200).json({
+				message: 'User Added'
+			})
+		} else {
+			res.status(200).json({
+				message: 'Success',
+				recipes: user.recipes
+			})
+		}
 	});
 });
 
