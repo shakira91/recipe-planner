@@ -35,6 +35,7 @@ export class SignInComponent implements OnInit {
       	localStorage.setItem('userId', data.userId);
       	localStorage.setItem('cuisine', data.cuisine);
         localStorage.setItem('username', data.username);
+        localStorage.setItem('recipes', data.recipes.length);
         this.signedIn = true;
         this.router.navigate(['user/'+ localStorage.getItem('userId')]);
       },
