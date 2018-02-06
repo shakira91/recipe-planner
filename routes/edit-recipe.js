@@ -11,8 +11,8 @@ const User = require('../models/user');
 router.post('/', (req, res) => {
     User.findByIdAndUpdate(req.body.userId, 
     	{
-            "$unset"  : [req.body.index],
-            "$set": req.body.formData,  
+            "$unset"  : user.recipes[req.body.index],
+            "$set": user.recipes[req.body.index] = req.body.formData,  
         },(err, user) => {
         console.log(user);
         if (err) {
@@ -41,10 +41,7 @@ router.post('/', (req, res) => {
 	});
 
  });
-		
-
 
 });
-
 
 module.exports = router;
