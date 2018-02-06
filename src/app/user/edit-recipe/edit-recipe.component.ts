@@ -20,7 +20,6 @@ export class EditRecipeComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private http: Http) { }
   
   saveEdit() {
-<<<<<<< HEAD
     const body = {formData: this.editForm.value, index: localStorage.getItem('recipe-index'), userId: localStorage.getItem('userId')};
     const headers = new Headers({'Content-Type' : 'application/json'});
     return this.http.post('http://127.0.0.1:3000/edit', body)
@@ -34,11 +33,7 @@ export class EditRecipeComponent implements OnInit {
   			console.log(error);
   		}
     );
-=======
-    if (this.editForm.value.title && this.editForm.value.ingrediets !== null) {
-      console.log(this.editForm.value.title)
-    }
->>>>>>> ca6833f993f2f8e18a7907135897b1e2219dcaf8
+
   }
 
   editingCanceled() {
