@@ -7,6 +7,7 @@
 		    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="getRecipes()">Search</button>
 		  </form>
 		  <p><a (click)="onSignOut()">Sign Out</a></p>
+			<p *ngIf="numberOfRecipes >= 1"><a (click)="userRecipes()">Recipes</a></p>
 		</nav>
     </div>
   </div>
