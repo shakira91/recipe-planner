@@ -20,7 +20,7 @@ export class EditRecipeComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private http: Http) { }
   
   saveEdit() {
-    const body = {formData: this.editForm.value, index: localStorage.getItem('recipe-index'), userId: localStorage.getItem('userId')};
+    const body = {formData: this.editForm.value, image: localStorage.getItem('recipe-image'), index: localStorage.getItem('recipe-index'), userId: localStorage.getItem('userId'), title: localStorage.getItem('recipe-title')};
     const headers = new Headers({'Content-Type' : 'application/json'});
     return this.http.post('http://127.0.0.1:3000/edit', body)
     .map((response: Response) => response.json())

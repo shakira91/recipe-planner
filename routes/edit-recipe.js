@@ -11,10 +11,11 @@ const User = require('../models/user');
 router.post('/', (req, res) => {
     User.findByIdAndUpdate(req.body.userId, 
     	{
-            "$unset"  : user.recipes[req.body.index],
-            "$set": user.recipes[req.body.index] = req.body.formData,  
+			 "$set": { ['recipes'[req.body.index][0]] : [req.body.image] },
+			 "$set": { ['recipes'[req.body.index][1]] : [req.body.formData.title] },
+			 "$set": { ['recipes'[req.body.index][2]] : [req.body.formData.ingredients] }
         },(err, user) => {
-        console.log(user);
+        console.log(user.recipes[req.body.index][2]);
         if (err) {
 			return res.status(401).json({
 				title: 'An error occured',
