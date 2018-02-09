@@ -32,7 +32,8 @@ router.post('/', function(req, res, next) {
 			token: token,
 			cuisine: user.qOne,
 			userId: user._id,
-			recipes: user.recipes
+			recipes: user.recipes,
+			username: user.username,
 		});
 		
 	});

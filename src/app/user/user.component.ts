@@ -13,6 +13,8 @@ export class UserComponent implements OnInit {
   savedRecipes: any;
   editRecipeClicked: any;
   editingRecipe: boolean = false;
+  savedRecipesLength: any; 
+  cuisine: string;
 
   constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
 
@@ -25,6 +27,8 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.cuisine = localStorage.getItem('cuisine');
+    
   	const body = { username: localStorage.getItem('username') };
     const headers = new Headers({'Content-Type' : 'application/json'});
     return this.http.post('http://127.0.0.1:3000/user', body)
@@ -32,7 +36,12 @@ export class UserComponent implements OnInit {
     .catch((error: Response) => Observable.throw(error.json())
     ).subscribe(
     	(data: any) => {
-        this.savedRecipes = data.recipes;
+      
+        this.savedRecipesLength = data.recipes.length;
+        localStorage.setItem('recipes', this.savedRecipesLength);
+        if(this.savedRecipesLength != 0) {
+          this.savedRecipes = data.recipes;
+        } 
   		}, 
   		(error: any) => {
   			console.log(error);

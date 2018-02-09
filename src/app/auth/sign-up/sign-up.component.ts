@@ -40,12 +40,11 @@ export class SignUpComponent implements OnInit {
         localStorage.setItem('token',data.token);
         localStorage.setItem('userId', data.userId);
         localStorage.setItem('cuisine', data.cuisine);
+        localStorage.setItem('username', data.username);
         localStorage.setItem('recipes', data.recipes.length);
-        if (data.recipes.length < 1) {
-          this.router.navigate(['welcome/'+ localStorage.getItem('userId')]);
-        } else {
-          this.router.navigate(['user/'+ localStorage.getItem('userId')]);
-        }
+        
+        this.router.navigate(['user/'+ localStorage.getItem('userId')]);
+     
       },
       error => {
         console.log(error)
