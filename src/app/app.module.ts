@@ -14,7 +14,6 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
 import { AuthComponent } from './auth/auth.component';
 import { EditRecipeComponent } from './user/edit-recipe/edit-recipe.component';
-import { FirstTimeUserComponent } from './auth/sign-up/first-time-user/first-time-user.component';
 
 
 @NgModule({
@@ -27,12 +26,10 @@ import { FirstTimeUserComponent } from './auth/sign-up/first-time-user/first-tim
     SignInComponent,
     UserComponent,
     AuthComponent,
-    EditRecipeComponent,
-    FirstTimeUserComponent
+    EditRecipeComponent
   ],
   imports: [
   	RouterModule.forRoot([
-       { path: 'welcome/:id', component: FirstTimeUserComponent },
        { path: 'user/:id', component: UserComponent }, 
        { path: 'edit/:id', component: EditRecipeComponent },    
   		 { path: 'recipes', component: RecipeListComponent },
