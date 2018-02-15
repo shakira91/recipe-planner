@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/user');
+var count = 0;
 
 // router.get('/', function(req, res, next){
 // 	user.find();
@@ -10,7 +11,7 @@ const User = require('../models/user');
 
 router.post('/', (req, res) => {
     User.findByIdAndUpdate(req.body.userId, 
-    	{ "$push": { 'recipes' : [req.body.image, req.body.title, req.body.ingredients] } }, 
+    	{ "$push": { 'recipes' : [req.body.image, req.body.title, req.body.ingredients]} }, 
     	{ "new": true, "upsert": true },(err, user) => {
         console.log(user);
         if (err) {
@@ -33,7 +34,8 @@ router.post('/', (req, res) => {
 			})
 		}
 		res.status(200).json({
-			message: 'Updated'
+			message: 'Updated',
+			count: count++
 		});
 		
 	});

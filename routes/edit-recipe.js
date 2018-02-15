@@ -11,10 +11,7 @@ const User = require('../models/user');
 router.post('/', (req, res) => {
     User.findByIdAndUpdate(req.body.userId, 
     	{
-			"$set": { 'recipes' : [
-				  [ req.body.index][0] = req.body.image, [req.body.index][1] = req.body.formData.title, [req.body.index][2] = req.body.formData.ingredients 
-			]},
-			
+			"$push": { 'recipes' : [ req.body.image, req.body.formData.title, req.body.formData.ingredients ]},	
         },(err, user) => {
         console.log(user.recipes);
         if (err) {
@@ -37,7 +34,8 @@ router.post('/', (req, res) => {
 			})
 		}
 		res.status(200).json({
-			message: 'Updated'
+			message: 'Updated',
+			index: req.body.index
 		});
 		
 	});

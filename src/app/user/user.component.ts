@@ -36,12 +36,16 @@ export class UserComponent implements OnInit {
     .catch((error: Response) => Observable.throw(error.json())
     ).subscribe(
     	(data: any) => {
-      console.log(data)
+
         this.savedRecipesLength = data.recipes.length;
         localStorage.setItem('recipes', this.savedRecipesLength);
         if(this.savedRecipesLength != 0) {
           this.savedRecipes = data.recipes;
         } 
+
+       
+          data.recipes.slice(1, localStorage.getItem('recipe-index'))///LOOK AT THIS
+     
   		}, 
   		(error: any) => {
   			console.log(error);

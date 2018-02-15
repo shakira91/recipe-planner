@@ -28,12 +28,13 @@ export class EditRecipeComponent implements OnInit {
     ).subscribe(
     	(data: any) => {
         console.log(data)
+        this.router.navigate(['user/' + localStorage.getItem('userId')]);
   		}, 
   		(error: any) => {
   			console.log(error);
   		}
     );
-
+    
   }
 
   editingCanceled() {
