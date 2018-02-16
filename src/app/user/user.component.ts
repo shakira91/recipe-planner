@@ -36,7 +36,7 @@ export class UserComponent implements OnInit {
     .catch((error: Response) => Observable.throw(error.json())
     ).subscribe(
     	(data: any) => {
-
+console.log(data)
         this.savedRecipesLength = data.recipes.length;
         localStorage.setItem('recipes', this.savedRecipesLength);
         if(this.savedRecipesLength != 0) {
