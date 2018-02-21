@@ -1,0 +1,11 @@
+<div>
+  <img [src]=""> <!--upload new img-->
+  <form [formGroup]="addRecipeForm" (ngSubmit)="addRecipe()">
+      <input type="text" formControlName="title" name="title" [value]="">
+      <br>
+      <textarea name="ingredients" formControlName="ingredients" [value]=""></textarea>
+      <br> 
+      <button [disabled]="!addRecipeForm.touched" type="submit" class="button recipe-submit">Save</button>
+      <button (click)="addingCanceled()">Cancel</button>
+  </form> 
+</div>

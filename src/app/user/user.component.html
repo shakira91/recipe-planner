@@ -6,9 +6,10 @@
 			<img src="{{ recipe[0] }}">
 			<p>{{ recipe[1] }}</p>
 			<div class="user-options">
-				<p><a (click)="editRecipe(recipe, i)">Edit Recipe</a></p>
+				<p><a (click)="deleteRecipe(recipe, i)">Delete Recipe</a></p>
 				<p><a>Add to Calendar</a></p>
 			</div>
 		</div>
 	</div>
+	<p><a (click)="addUserRecipe()">Add Your Own</a></p>
 </div>

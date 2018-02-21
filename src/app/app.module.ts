@@ -13,7 +13,8 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
 import { AuthComponent } from './auth/auth.component';
-import { EditRecipeComponent } from './user/edit-recipe/edit-recipe.component';
+import { DeleteRecipeComponent } from './user/delete-recipe/delete-recipe.component';
+import { AddUserRecipeComponent } from './user/add-user-recipe/add-user-recipe.component';
 
 
 @NgModule({
@@ -26,12 +27,14 @@ import { EditRecipeComponent } from './user/edit-recipe/edit-recipe.component';
     SignInComponent,
     UserComponent,
     AuthComponent,
-    EditRecipeComponent
+    DeleteRecipeComponent,
+    AddUserRecipeComponent
   ],
   imports: [
   	RouterModule.forRoot([
        { path: 'user/:id', component: UserComponent }, 
-       { path: 'edit/:id', component: EditRecipeComponent },    
+       { path: 'delete/:id', component: DeleteRecipeComponent },
+       { path: 'add/:id', component: AddUserRecipeComponent },
   		 { path: 'recipes', component: RecipeListComponent },
        { path: '', component: AuthComponent },
   	]),

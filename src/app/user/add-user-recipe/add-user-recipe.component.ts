@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Http, Response, RequestOptions, Headers, Jsonp } from '@angular/http';
@@ -6,23 +6,23 @@ import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-edit-recipe',
-  templateUrl: './edit-recipe.component.html',
-  styleUrls: ['./edit-recipe.component.css']
+  selector: 'app-add-user-recipe',
+  templateUrl: './add-user-recipe.component.html',
+  styleUrls: ['./add-user-recipe.component.css']
 })
-export class EditRecipeComponent implements OnInit {
+export class AddUserRecipeComponent implements OnInit {
 
   recipeImage: string = localStorage.getItem('recipe-image');
   recipeTitle: string = localStorage.getItem('recipe-title');
   recipeIngredients: string = localStorage.getItem('recipe-ingredients');
-  editForm: FormGroup; 
+  addRecipeForm: FormGroup; 
 
   constructor(private router: Router, private route: ActivatedRoute, private http: Http) { }
   
-  saveEdit() {
-    const body = {formData: this.editForm.value, image: this.recipeImage, title: this.recipeTitle, ingredients: this.recipeIngredients, index: localStorage.getItem('recipe-index'), userId: localStorage.getItem('userId')};
+  addRecipe() {
+    const body = {formData: this.addRecipeForm.value, image: this.recipeImage, title: this.recipeTitle, ingredients: this.recipeIngredients, index: localStorage.getItem('recipe-index'), userId: localStorage.getItem('userId')};
     const headers = new Headers({'Content-Type' : 'application/json'});
-    return this.http.post('http://127.0.0.1:3000/edit', body)
+    return this.http.post('http://127.0.0.1:3000/add', body)
     .map((response: Response) => response.json())
     .catch((error: Response) => Observable.throw(error.json())
     ).subscribe(
@@ -37,12 +37,12 @@ export class EditRecipeComponent implements OnInit {
     
   }
 
-  editingCanceled() {
+  addingCanceled() {
     this.router.navigate(['user/' + localStorage.getItem('userId')]);
   }
 
   ngOnInit() {
-    this.editForm = new FormGroup({
+    this.addRecipeForm = new FormGroup({
       title : new FormControl(null),
       ingredients : new FormControl(null),
     })

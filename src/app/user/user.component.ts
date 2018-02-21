@@ -18,12 +18,27 @@ export class UserComponent implements OnInit {
 
   constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
 
-  editRecipe(recipe, index) {
-    localStorage.setItem('recipe-index', index);
-    localStorage.setItem('recipe-image', recipe[0]);
-    localStorage.setItem('recipe-title', recipe[1]);
-    localStorage.setItem('recipe-ingredients', recipe[2]);
-    this.router.navigate(['edit/' + localStorage.getItem('userId')]);
+
+  deleteRecipe(recipe, index) {
+    this.router.navigate(['delete/' + localStorage.getItem('userId')]);
+    const body = { username: localStorage.getItem('username') };
+    const headers = new Headers({'Content-Type' : 'application/json'});
+    return this.http.post('http://127.0.0.1:3000/delete', body)
+    .map((response: Response) => response.json())
+    .catch((error: Response) => Observable.throw(error.json())
+    ).subscribe(
+    	(data: any) => {
+        console.log(data)
+     
+  		}, 
+  		(error: any) => {
+  			console.log(error);
+  		}
+    );
+  }
+
+  addUserRecipe(){
+    this.router.navigate(['add/' + localStorage.getItem('userId')]);
   }
 
   ngOnInit() {
@@ -36,16 +51,12 @@ export class UserComponent implements OnInit {
     .catch((error: Response) => Observable.throw(error.json())
     ).subscribe(
     	(data: any) => {
-console.log(data)
+        console.log(data)
         this.savedRecipesLength = data.recipes.length;
         localStorage.setItem('recipes', this.savedRecipesLength);
         if(this.savedRecipesLength != 0) {
           this.savedRecipes = data.recipes;
-        } 
-
-       
-          data.recipes.slice(1, localStorage.getItem('recipe-index'))///LOOK AT THIS
-     
+        }      
   		}, 
   		(error: any) => {
   			console.log(error);
