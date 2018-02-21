@@ -20,21 +20,12 @@ export class UserComponent implements OnInit {
 
 
   deleteRecipe(recipe, index) {
+    localStorage.setItem('recipe-index', index);
+    localStorage.setItem('recipe-image', recipe[0]);
+    localStorage.setItem('recipe-title', recipe[1]);
+    localStorage.setItem('recipe-ingredients', recipe[2]);
+
     this.router.navigate(['delete/' + localStorage.getItem('userId')]);
-    const body = { username: localStorage.getItem('username') };
-    const headers = new Headers({'Content-Type' : 'application/json'});
-    return this.http.post('http://127.0.0.1:3000/delete', body)
-    .map((response: Response) => response.json())
-    .catch((error: Response) => Observable.throw(error.json())
-    ).subscribe(
-    	(data: any) => {
-        console.log(data)
-     
-  		}, 
-  		(error: any) => {
-  			console.log(error);
-  		}
-    );
   }
 
   addUserRecipe(){

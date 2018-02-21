@@ -11,7 +11,7 @@ const User = require('../models/user');
 router.post('/', (req, res) => {
     User.findByIdAndUpdate(req.body.userId, 
 		{
-			$push: {
+			"$push": {
 			  recipes: [ req.body.image, req.body.formData.title, req.body.formData.ingredients ],
 			}
 		},(err, user) => {

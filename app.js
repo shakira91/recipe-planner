@@ -4,7 +4,8 @@ const appRoutes = require('./routes/app');
 const signIn = require('./routes/signin');
 const signUp = require('./routes/signup');
 const update = require('./routes/update-recipes-array');
-const edit = require('./routes/add-user-recipe');
+const add = require('./routes/add-user-recipe');
+const deleteRecipe = require('./routes/delete-a-recipe');
 const user = require('./routes/user');
 const path = require('path');
 
@@ -34,7 +35,8 @@ app.use(function (req, res, next) {
 app.use('/signin', signIn);
 app.use('/signup', signUp);
 app.use('/recipes', update);
-app.use('/add', edit);
+app.use('/add', add);
+app.use('/delete', deleteRecipe);
 app.use('/user', user);
 app.use('/', appRoutes);
 
