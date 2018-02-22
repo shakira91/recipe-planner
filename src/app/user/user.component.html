@@ -1,4 +1,4 @@
-<div class="col-lg-12 col-md-12 col-sm-12 search-recipes">
+<div class="search-recipes">
 	<app-search-recipes></app-search-recipes>
 	<p *ngIf="savedRecipesLength == 0">You do not have any saved recipes yet. Since your favorite food is {{ cuisine }}, maybe try searching for {{ cuisine }} dishes? </p>	
 	<div *ngFor="let recipe of savedRecipes; let i = index;">

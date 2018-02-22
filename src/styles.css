@@ -9,3 +9,41 @@
     height:100%;
 
 } */
+
+html, body{
+    font-size: 100%;
+}
+
+h3 {
+    font-size: 2.2em;
+}
+
+p, span, strong, label, a, li, i, input, em {
+    font-size: 1.2em;
+}
+
+.float-left {
+    float: left;
+    margin-left: 20px;
+}
+
+.float-right {
+    float: right;
+    margin-right: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+.login-screen {
+    max-width: 800px;
+    margin: 100px auto;
+    height: 800px;
+    background: white;
+}
+

@@ -1,16 +1,16 @@
-<div class="col-lg-12 col-md-12 col-sm-12 search-recipes">
+<div class="search-recipes">
 	<app-search-recipes></app-search-recipes>
 </div>
 <div *ngIf="!recipes"><p>Gettin' something good.</p></div>
-<div class="col-lg-4 col-md-6 col-sm-12 recipe-item" (mouseover)=showRecipe(recipe) *ngFor="let recipe of recipes">
-	<div class="col-lg-6 col-md-6 col-sm-12">
+<div class="recipe-item" (mouseover)=showRecipe(recipe) *ngFor="let recipe of recipes">
+	<div class="">
 		<img [src]="recipe.recipe.image">
 	</div>
-	<div class="col-lg-6 col-md-6 col-sm-12 recipe-preview">
+	<div class="recipe-preview">
 		 <h3><a [href]="recipe.recipe.url">{{ recipe.recipe.label }}</a></h3>
 		 <p>BLAHHHHH</p>
 	</div>
 </div>
-<div class="col-lg-12 col-md-12 col-sm-12 recipe-details" *ngIf="hovered">
+<div class="recipe-details" *ngIf="hovered">
 	<app-recipe-details [details]="recipeDetail"></app-recipe-details>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthServiceService } from '../auth-service.service';
@@ -12,10 +12,11 @@ export class SignInComponent implements OnInit {
 
   signInForm: FormGroup;
   signedIn: boolean = false;
-
+  clicked: any;
   constructor(private router: Router, private route: ActivatedRoute, private authService: AuthServiceService) { }
 
   ngOnInit() {
+
   	this.signInForm = new FormGroup({
   		'username' : new FormControl(null, Validators.required),
   		'password' : new FormControl(null, Validators.required),
