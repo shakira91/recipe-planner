@@ -32,6 +32,10 @@ p, span, strong, label, a, li, i, input, em {
     margin-right: 20px;
 }
 
+.width-30 {
+    width: 30%;
+}
+
 .form-group {
     margin-bottom: 20px;
 }

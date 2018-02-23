@@ -1,10 +1,4 @@
 <div class="login-screen">
-    <div>
-        <h3 (click)="showSignIn()">Sign In</h3> 
-        <div class="float-left"><app-sign-in *ngIf="signInClicked"></app-sign-in></div>
-    </div>
-    <div>
-        <h3 (click)="showSignUp()">Sign Up</h3>
-        <div class="float-left"><app-sign-up *ngIf="signUpClicked"></app-sign-up></div>
-    </div>
+    <div class="float-left width-30"><h3 (click)="showSignIn()">Sign In</h3><app-sign-in *ngIf="signInClicked"></app-sign-in></div>
+    <div class="float-left width-30"><h3 (click)="showSignUp()">Sign Up</h3><app-sign-up *ngIf="signUpClicked"></app-sign-up></div>
 </div>

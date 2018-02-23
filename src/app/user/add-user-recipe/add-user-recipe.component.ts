@@ -15,7 +15,7 @@ export class AddUserRecipeComponent implements OnInit {
   recipeImage: string = localStorage.getItem('recipe-image');
   recipeTitle: string = localStorage.getItem('recipe-title');
   recipeIngredients: string = localStorage.getItem('recipe-ingredients');
-  newImage: string; 
+  newImage: string = null; 
   addRecipeForm: FormGroup; 
 
   constructor(private router: Router, private route: ActivatedRoute, private http: Http) { }
@@ -25,7 +25,7 @@ export class AddUserRecipeComponent implements OnInit {
   }
   
   addRecipe() {
-    const body = {formData: this.addRecipeForm.value, image: this.recipeImage, title: this.recipeTitle, ingredients: this.recipeIngredients, index: localStorage.getItem('recipe-index'), userId: localStorage.getItem('userId')};
+    const body = {formData: this.addRecipeForm.value, image: this.newImage, title: this.recipeTitle, ingredients: this.recipeIngredients, index: localStorage.getItem('recipe-index'), userId: localStorage.getItem('userId')};
     const headers = new Headers({'Content-Type' : 'application/json'});
     return this.http.post('http://127.0.0.1:3000/add', body)
     .map((response: Response) => response.json())
@@ -47,7 +47,6 @@ export class AddUserRecipeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.newImage = "https://images.pexels.com/photos/8500/food-dinner-pasta-spaghetti-8500.jpg?w=1260&h=750&auto=compress&cs=tinysrgb"; 
     this.addRecipeForm = new FormGroup({
       title : new FormControl(null),
       ingredients : new FormControl(null),
