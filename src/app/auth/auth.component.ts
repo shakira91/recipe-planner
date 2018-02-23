@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-auth',
@@ -7,7 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
+  signUpClicked: any = false;
+  signInClicked: any = true;
+
   constructor() { }
+
+  showSignUp() {
+    this.signUpClicked = true;
+    this.signInClicked = false;
+  }
+
+  showSignIn() {
+    this.signInClicked = true;
+    this.signUpClicked = false;
+  }
+  
 
   ngOnInit() {
   }

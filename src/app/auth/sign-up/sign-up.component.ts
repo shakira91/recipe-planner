@@ -12,14 +12,10 @@ import { User } from "../user.model";
 })
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
-  @Input() clicked: any = false;
+
 
   constructor(private router: Router, private route: ActivatedRoute, private authService: AuthServiceService) { }
 
-  showSignUp() {
-    this.clicked = true;
-  }
-  
   
   ngOnInit() {
   	this.signUpForm = new FormGroup({
