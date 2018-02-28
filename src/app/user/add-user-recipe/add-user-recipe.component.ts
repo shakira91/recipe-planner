@@ -15,18 +15,35 @@ export class AddUserRecipeComponent implements OnInit {
   recipeImage: string = localStorage.getItem('recipe-image');
   recipeTitle: string = localStorage.getItem('recipe-title');
   recipeIngredients: string = localStorage.getItem('recipe-ingredients');
-  newImage: string = null; 
+  newImage: File = null; 
   addRecipeForm: FormGroup; 
+  apiEndPoint: any = 'http://localhost:3000/uploads'
 
   constructor(private router: Router, private route: ActivatedRoute, private http: Http) { }
 
   uploadImg(image) {
-    this.newImage = image;
+    console.log(image)
+      let fileList: FileList = image.target.files;
+      if(fileList.length > 0) {
+          let file: File = fileList[0];
+          let formData:FormData = new FormData();
+          formData.append('uploadFile', file, file.name);
+          let headers = new Headers();
+          /** No need to include Content-Type in Angular 4 */
+          //headers.append('Accept', 'application/json');
+          let options = new RequestOptions({ headers: headers });
+          this.http.post(`${this.apiEndPoint}`, formData, options)
+              .map(res => res.json())
+              .catch(error => Observable.throw(error))
+              .subscribe(
+                  data => console.log('success'),
+                  error => console.log(error)
+              )
+      }
   }
   
   addRecipe() {
-    const body = {formData: this.addRecipeForm.value, image: this.newImage, title: this.recipeTitle, ingredients: this.recipeIngredients, index: localStorage.getItem('recipe-index'), userId: localStorage.getItem('userId')};
-    const headers = new Headers({'Content-Type' : 'application/json'});
+    const body = {formData: this.addRecipeForm.value, image: this.newImage, userId: localStorage.getItem('userId')};
     return this.http.post('http://127.0.0.1:3000/add', body)
     .map((response: Response) => response.json())
     .catch((error: Response) => Observable.throw(error.json())

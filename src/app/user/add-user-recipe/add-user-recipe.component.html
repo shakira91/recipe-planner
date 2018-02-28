@@ -1,9 +1,9 @@
 <div>
-    <div>
-        <label for="file">Choose an Image File</label>
-        <input type="file" id="imgFile" (change)="uploadImg($event.target.files[0].name)">
-    </div>
-  <img [src]="newImage"> <!--upload new img-->
+  <div *ngIf="newImage !== null"><img [src]="newImage"></div> <!--upload new img-->
+  <div>
+    <label for="file">Choose an Image File</label>
+    <input type="file" id="imgFile" name="avatar" (change)="uploadImg($event)">
+  </div>
   <form [formGroup]="addRecipeForm" (ngSubmit)="addRecipe()">
       <input type="text" formControlName="title" name="title" [value]="">
       <br>
