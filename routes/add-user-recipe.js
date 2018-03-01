@@ -1,31 +1,39 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-var upload = multer({ dest: 'uploads/' })
+const path = require('path');
+
+
 
 const User = require('../models/user');
 
 router.post('/', (req, res, next) => {
-
+	const storage = multer({ 
+		dest: 'uploads/',
+		filename: function(req, file, cb) {
+			cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+		}
+	});
+	console.log()
+	const upload = multer({
+		storage: storage
+	}).single('image');
 	User.findByIdAndUpdate(req.body.userId, 		
 		{
 			"$push": {
 			  recipes: [ req.body.image, req.body.formData.title, req.body.formData.ingredients ],
 			}
 		},(err, user) => {
-
-			var upload = multer().single('avatar')
-		
-			  upload(req, res, function (err) {
-				if (err) {
-				  // An error occurred when uploading
-				  return
-				}
-			
-				// Everything went fine
-			  })
-		
-        if (err) {
+		upload(req, res, (err)=>{
+			if(err){
+				return res.status(401).json({
+					error: {message: 'Log in failed'}
+				});
+			} else {
+				console.log(req.file)
+			}
+		});
+    if (err) {
 			return res.status(401).json({
 				title: 'An error occured',
 				error: err.message

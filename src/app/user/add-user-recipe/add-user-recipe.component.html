@@ -1,10 +1,10 @@
 <div>
-  <div *ngIf="newImage !== null"><img [src]="newImage"></div> <!--upload new img-->
-  <div>
-    <label for="file">Choose an Image File</label>
-    <input type="file" id="imgFile" name="avatar" (change)="uploadImg($event)">
-  </div>
-  <form [formGroup]="addRecipeForm" (ngSubmit)="addRecipe()">
+   <form [formGroup]="addRecipeForm" (ngSubmit)="addRecipe()" enctype="multipart/form-data">
+      <div><img [src]=""></div> <!--upload new img-->
+      <div>
+        <label for="file">Choose an Image File</label>
+        <input type="file" id="imgFile" name="image" (change)="uploadImg($event)">
+      </div>
       <input type="text" formControlName="title" name="title" [value]="">
       <br>
       <textarea name="ingredients" formControlName="ingredients" [value]=""></textarea>
