@@ -15,6 +15,7 @@ import { UserComponent } from './user/user.component';
 import { AuthComponent } from './auth/auth.component';
 import { DeleteRecipeComponent } from './user/delete-recipe/delete-recipe.component';
 import { AddUserRecipeComponent } from './user/add-user-recipe/add-user-recipe.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AddUserRecipeComponent } from './user/add-user-recipe/add-user-recipe.c
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    FileUploadModule
   ],
   providers: [
   	AuthServiceService,

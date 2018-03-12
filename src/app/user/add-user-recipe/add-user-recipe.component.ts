@@ -4,6 +4,9 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Http, Response, RequestOptions, Headers, Jsonp } from '@angular/http';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
+import { FileUploader } from 'ng2-file-upload';
+
+const URL = 'http://127.0.0.1:3000/uploadImg';
 
 @Component({
   selector: 'app-add-user-recipe',
@@ -16,15 +19,16 @@ export class AddUserRecipeComponent implements OnInit {
   recipeTitle: string = localStorage.getItem('recipe-title');
   recipeIngredients: string = localStorage.getItem('recipe-ingredients');
   newImage: File; 
-  addRecipeForm: FormGroup; 
+  addRecipeForm: FormGroup;
+  public uploader:FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
 
   constructor(private router: Router, private route: ActivatedRoute, private http: Http) { }
 
-  uploadImg(image) {
+  uploadImg(image, uploader) {
     this.newImage = image.target.files[0].name;
-    
-  }
   
+  }
+
   addRecipe() {
     const body = {formData: this.addRecipeForm.value, image: this.newImage, userId: localStorage.getItem('userId')};
     const headers = new Headers({'Content-Type' : 'application/json'});
@@ -51,7 +55,12 @@ export class AddUserRecipeComponent implements OnInit {
     this.addRecipeForm = new FormGroup({
       title : new FormControl(null),
       ingredients : new FormControl(null),
-    })
+    });
+      this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+      this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
+           console.log("ImageUpload:uploaded:", item, status, response);
+       };
+   
   }
 
 }

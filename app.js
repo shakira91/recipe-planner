@@ -9,6 +9,7 @@ const update = require('./routes/update-recipes-array');
 const add = require('./routes/add-user-recipe');
 const deleteRecipe = require('./routes/delete-a-recipe');
 const user = require('./routes/user');
+const uploadImg = require('./routes/upload-image');
 
 const mongoose = require('mongoose');
 mongoose.connect('localhost:27017/users');
@@ -37,6 +38,7 @@ app.use('/signin', signIn);
 app.use('/signup', signUp);
 app.use('/recipes', update);
 app.use('/add', add);
+app.use('/uploadImg', uploadImg);
 app.use('/delete', deleteRecipe);
 app.use('/user', user);
 app.use('/', appRoutes);
