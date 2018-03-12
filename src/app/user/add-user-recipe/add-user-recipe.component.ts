@@ -24,11 +24,6 @@ export class AddUserRecipeComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute, private http: Http) { }
 
-  uploadImg(image, uploader) {
-    this.newImage = image.target.files[0].name;
-  
-  }
-
   addRecipe() {
     const body = {formData: this.addRecipeForm.value, image: this.newImage, userId: localStorage.getItem('userId')};
     const headers = new Headers({'Content-Type' : 'application/json'});
@@ -38,7 +33,7 @@ export class AddUserRecipeComponent implements OnInit {
     ).subscribe(
     	(data: any) => {
         console.log(data)
-        //this.router.navigate(['user/' + localStorage.getItem('userId')]);
+        this.router.navigate(['user/' + localStorage.getItem('userId')]);
   		}, 
   		(error: any) => {
   			console.log(error);
@@ -58,7 +53,8 @@ export class AddUserRecipeComponent implements OnInit {
     });
       this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
       this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
-           console.log("ImageUpload:uploaded:", item, status, response);
+           //console.log("ImageUpload:uploaded:", item, status, response);
+           this.newImage = response.split(" ").slice(-1).join();
        };
    
   }
