@@ -15,6 +15,9 @@ export class UserComponent implements OnInit {
   editingRecipe: boolean = false;
   savedRecipesLength: any; 
   cuisine: string;
+  month: string;
+  day: string;
+  year: string;
 
   constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
 
@@ -30,6 +33,18 @@ export class UserComponent implements OnInit {
 
   addUserRecipe(){
     this.router.navigate(['add/' + localStorage.getItem('userId')]);
+  }
+
+  getMonth(event){
+    this.month = event.path["0"].value;
+  }
+
+  getDate(event){
+    this.day = event.path["0"].value;
+  }
+
+  getYear(event){
+    this.year = event.path["0"].value;
   }
 
   ngOnInit() {
