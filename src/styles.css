@@ -44,6 +44,10 @@ p, span, strong, label, a, li, i, input, em {
     display: none;
 }
 
+.show {
+    display: block;
+}
+
 .login-screen {
     max-width: 800px;
     margin: 100px auto;

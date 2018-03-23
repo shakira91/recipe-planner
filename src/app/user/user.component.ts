@@ -18,6 +18,7 @@ export class UserComponent implements OnInit {
   month: string;
   day: string;
   year: string;
+  addeventatc: any;
 
   constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
 
@@ -47,7 +48,13 @@ export class UserComponent implements OnInit {
     this.year = event.path["0"].value;
   }
 
+  addToCalendar(event) {
+    event.preventDefault()
+    console.log()
+  }
+
   ngOnInit() {
+    
     this.cuisine = localStorage.getItem('cuisine');
     
   	const body = { username: localStorage.getItem('username') };
@@ -62,12 +69,16 @@ export class UserComponent implements OnInit {
         localStorage.setItem('recipes', this.savedRecipesLength);
         if(this.savedRecipesLength != 0) {
           this.savedRecipes = data.recipes;
+          setTimeout(function(){
+            this.addeventatc.refresh();
+         }, 2000);
         }      
   		}, 
   		(error: any) => {
   			console.log(error);
   		}
     );
+    
   }
-
+  
 }

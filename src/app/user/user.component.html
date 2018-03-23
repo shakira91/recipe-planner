@@ -9,7 +9,8 @@
 				<p><a (click)="deleteRecipe(recipe, i)">Delete Recipe</a></p>
 				<p><a>Add to Calendar</a></p>				
 				<label>Month</label> 			
-				<select id="month" (change)="getMonth($event)"> 
+				<select id="month" (change)="getMonth($event)">
+				<option></option>   
 				<option>January</option>       
 				<option>February</option>       
 				<option>March</option>       
@@ -24,7 +25,8 @@
 				<option>December</option>       
 				</select> 
 				<label>Day</label> 
-				<select id="day" (change)="getDate($event)"> 
+				<select id="day" (change)="getDate($event)">
+				<option></option>    
 				<option>1</option>       
 				<option>2</option>       
 				<option>3</option>       
@@ -59,12 +61,13 @@
 				</select> 
 				<label>Year</label> 
 				<select id="year" (change)="getYear($event)"> 
+				<option></option>   
 				<option>2018</option>       
 				<option>2019</option>       
 				<option>2020</option>       
 				<option>2021</option>            
 				</select>
-				<div title="Add to Calendar" class="addeventatc">Add to Calendar
+				<div title="Add to Calendar" class="addeventatc add-to-calendar-{{recipe[1]}}">Add to Calendar
 					<span class="start">{{ month }}-{{ day }}-{{ year }} 08:00</span>
 					<span class="end">{{ month }}-{{ day }}-{{ year }}</span>
 					<span class="title"> Make {{ recipe[1] }} for Dinner!</span>
