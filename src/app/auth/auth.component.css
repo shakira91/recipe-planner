@@ -14,3 +14,66 @@
     right: 0;
     bottom: 0;
 }
+
+.welcome {
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    opacity: 0;
+    -webkit-animation: fadeIn 0.9s 1;
+    animation: fadeIn 0.9s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+.login-screen {
+    opacity: 0;
+    -webkit-animation: slideUp 0.9s 1;
+    animation: slideUp 0.9s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0.0;
+    }
+    100% {
+      opacity: 1.0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0.0;
+    }
+    100% {
+      opacity: 1.0;
+    }
+   }
+
+   @-webkit-keyframes slideUp {
+    0% {
+      transform: translateY(200%);
+    }
+    100% {
+      transform: translateY(-10%);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      transform: translateY(200%);
+    }
+    100% {
+      transform: translateY(-10%);
+      opacity: 1;
+    }
+   }

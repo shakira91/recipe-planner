@@ -43,3 +43,7 @@ p, span, strong, label, a, li, i, input, em {
     background: white;
 }
 
+.typed-cursor {
+    display: none !important;
+}
+
