@@ -10,6 +10,10 @@ p, span, strong, label, a, li, i, input, em {
     font-size: 1.2em;
 }
 
+img {
+    max-width: 100%;
+}
+
 .float-left {
     float: left;
     margin-left: 20px;
@@ -34,13 +38,6 @@ p, span, strong, label, a, li, i, input, em {
 
 .show {
     display: block;
-}
-
-.login-screen {
-    max-width: 800px;
-    margin: 100px auto;
-    height: 800px;
-    background: white;
 }
 
 .typed-cursor {

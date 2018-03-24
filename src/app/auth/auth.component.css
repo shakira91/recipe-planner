@@ -13,6 +13,7 @@
     top: 0;
     right: 0;
     bottom: 0;
+    font-family: 'Oswald', sans-serif;
 }
 
 .welcome {
@@ -38,6 +39,10 @@
     animation-fill-mode: forwards;
     -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
+    max-width: 800px;
+    margin: 100px auto;
+    height: 800px;
+    background: white;
 }
 
 @-webkit-keyframes fadeIn {
