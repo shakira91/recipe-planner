@@ -45,6 +45,15 @@
     background: white;
 }
 
+.active {
+    border-bottom: 3px solid #252525;
+    transition: .3s ease-in-out;
+}
+
+.active:hover {
+    margin-left: 75%;
+}
+
 @-webkit-keyframes fadeIn {
     0% {
       opacity: 0.0;

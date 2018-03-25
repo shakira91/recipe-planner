@@ -2,6 +2,6 @@
     <p class="logo"><img src="{{ logo }}"></p>
 </div>
 <div class="login-screen">
-    <div class="float-left width-30"><h3 (click)="showSignIn()">Sign In</h3><app-sign-in *ngIf="signInClicked"></app-sign-in></div>
-    <div class="float-left width-30"><h3 (click)="showSignUp()">Sign Up</h3><app-sign-up *ngIf="signUpClicked"></app-sign-up></div>
+    <div class="float-left width-30"><h3 [ngClass]="{'active':signInClicked}" (click)="showSignIn()">Sign In</h3><app-sign-in *ngIf="signInClicked"></app-sign-in></div>
+    <div class="float-left width-30"><h3 [ngClass]="{'active':signUpClicked}" (click)="showSignUp()">Sign Up</h3><app-sign-up *ngIf="signUpClicked"></app-sign-up></div>
 </div>
