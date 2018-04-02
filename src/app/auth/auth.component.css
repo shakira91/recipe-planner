@@ -1,5 +1,5 @@
 :host {
-    /* background-image: url(/assets/images/jay-wennington-2065.jpg);  */
+    background-image: url(/assets/images/jay-wennington-2065.jpg);  */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,8 +48,8 @@
 
 .active-bar {
     margin-top: -41px;
-    -webkit-animation: activeLoad 0.5s;
-    animation: activeLoad 0.5s;
+    -webkit-animation: activeLoad 0.3s;
+    animation: activeLoad 0.3s;
     border-bottom: 3px solid #252525;
     transition: .3s ease all; 
     animation-direction: alternate;  
@@ -57,12 +57,12 @@
 
   .unactive-bar {
     margin-top: -41px;
-    -webkit-animation: activeUnload 0.5s;
-    animation: activeUnload 0.5s;
+    -webkit-animation: activeUnload 0.3s;
+    animation: activeUnload 0.3s;
     border-bottom: 3px solid #252525;
     transition: .3s ease all; 
     animation-direction: alternate;  
-    opacity: 0;
+    width: 0;
   }
 
 @-webkit-keyframes activeLoad {
