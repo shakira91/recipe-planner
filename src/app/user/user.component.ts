@@ -49,8 +49,7 @@ export class UserComponent implements OnInit {
   }
 
   addToCalendar(event) {
-    event.preventDefault()
-    console.log()
+    event.preventDefault();
   }
 
   ngOnInit() {
