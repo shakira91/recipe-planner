@@ -2,13 +2,16 @@
   <div class="">
     <div class="">
     	<nav class="">
-		  <form class="">
-		    <input class="" value="{{cuisine}}" type="text" placeholder="Search">
-		    <button class="" type="submit" (click)="getRecipes()">Search</button>
-		  </form>
-		  <p><a (click)="onSignOut()">Sign Out</a></p>
-			<p *ngIf="numberOfRecipes >= 1"><a (click)="userRecipes()">Recipes</a></p>
-		</nav>
+				<div class="">
+					<img src="{{ logo }}" style="width: 200px;" id="logo-small">
+					<input class="" value="{{cuisine}}" type="text" placeholder="Search">
+					<button class="" type="submit" (click)="getRecipes()">Search</button>
+					<div id="controls">
+						<span><a (click)="onSignOut()">Sign Out</a></span>
+						<span *ngIf="numberOfRecipes >= 1"><a (click)="userRecipes()">Recipes</a></span>
+					</div>
+				</div>
+			</nav>
     </div>
   </div>
 </div>

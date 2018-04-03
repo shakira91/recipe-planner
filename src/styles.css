@@ -28,6 +28,10 @@ img {
     width: 30%;
 }
 
+.main {
+    margin: 50px auto;
+}
+
 .form-group {
     margin-bottom: 20px;
 }

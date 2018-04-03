@@ -8,6 +8,7 @@ import { AuthServiceService } from '../auth/auth-service.service';
   styleUrls: ['./search-recipes.component.css']
 })
 export class SearchRecipesComponent implements OnInit {
+  logo: any = '../assets/images/recipe-book-logo.png';
   cuisine: string;
   numberOfRecipes: any;
   

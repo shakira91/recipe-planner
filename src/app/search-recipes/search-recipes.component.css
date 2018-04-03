@@ -1,0 +1,17 @@
+nav {
+    background: black;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+#controls {
+    color: white;
+    float: right;
+}
+
+#logo-small {
+    float: left;
+}
