@@ -32,6 +32,11 @@ export class UserComponent implements OnInit {
     this.router.navigate(['delete/' + localStorage.getItem('userId')]);
   }
 
+  getRecipes() {
+    this.router.navigate(['recipes']);
+   }
+
+
   addUserRecipe(){
     this.router.navigate(['add/' + localStorage.getItem('userId')]);
   }
