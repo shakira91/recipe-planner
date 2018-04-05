@@ -10,6 +10,13 @@ p, span, strong, label, a, li, i, input, em {
     font-size: 1.2em;
 }
 
+input[type=text] {
+    border-radius: 5px;
+    padding: 0px 10px;
+    border: 1px solid #0000002b;
+    height: 40px;
+}
+
 img {
     max-width: 100%;
 }
@@ -26,6 +33,10 @@ img {
 
 .width-30 {
     width: 30%;
+}
+
+.width-45 {
+    width: 45%;
 }
 
 .main {

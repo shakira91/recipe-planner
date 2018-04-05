@@ -1,14 +1,14 @@
 
-<div class="sign-up"> 
-  <form class="" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label>Username</label>
-      <input type="text" class="form-control" id="username" required formControlName="username">
-    </div>
-    <div class="form-group">
-      <label>Password</label>
-      <input type="text" class="form-control" id="password" required formControlName="password">
-    </div>
-    <button type="submit" [disabled]="!signInForm.valid" class="btn">Submit</button>
-  </form>
+<div class="sign-in-container"> 
+  <div class="sign-up"> 
+    <form class="" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input type="text" class="form-control" id="username" required formControlName="username" placeholder="Username" size="50">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="password" required formControlName="password" placeholder="Password" size="50">
+      </div>
+      <button type="submit" [disabled]="!signInForm.valid" class="btn">Submit</button>
+    </form>
+  </div>
 </div>
