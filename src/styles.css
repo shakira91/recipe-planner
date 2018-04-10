@@ -17,6 +17,20 @@ input[type=text] {
     height: 40px;
 }
 
+button {
+    font-size: 1.2em;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 10px 40px;
+    background: #3D9970;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #3d9970b8;
+}
+
 img {
     max-width: 100%;
 }
@@ -53,6 +67,10 @@ img {
 
 .show {
     display: block;
+}
+
+.error {
+    color: red;
 }
 
 .typed-cursor {

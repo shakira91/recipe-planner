@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthServiceService } from '../auth-service.service';
@@ -14,6 +14,7 @@ export class SignInComponent implements OnInit {
   signInForm: FormGroup;
   signedIn: boolean = false;
   clicked: any;
+  firstTimeUser: boolean;
   constructor(private router: Router, private route: ActivatedRoute, private authService: AuthServiceService) { }
 
   ngOnInit() {
@@ -41,7 +42,10 @@ export class SignInComponent implements OnInit {
         this.signedIn = true;
         this.router.navigate(['user/'+ localStorage.getItem('userId')]);
       },
-      error => console.log(error)
+      error => {
+        this.firstTimeUser = true;
+        console.log(error)
+        }
       );
   }
 

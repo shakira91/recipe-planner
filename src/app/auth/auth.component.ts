@@ -29,6 +29,10 @@ export class AuthComponent implements OnInit {
     this.signInClicked = true;
     this.signUpClicked = false;
   }
+
+  firstTimeUser(event) {
+    console.log(event)
+  }
   
 
   ngOnInit() {

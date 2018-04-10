@@ -21,6 +21,15 @@ h3 {
     color: #3e3e3e;
 }
 
+button {
+    font-size: 1.0em;
+    border: none;
+    padding: 10px 70px;
+    max-width: 100%;
+    text-transform: uppercase;
+    color: #3f3f3f;
+}
+
 .welcome {
     text-align: center;
     color: white;

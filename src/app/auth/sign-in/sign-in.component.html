@@ -10,5 +10,6 @@
       </div>
       <button type="submit" [disabled]="!signInForm.valid" class="btn">Submit</button>
     </form>
+    <p *ngIf="firstTimeUser" class="error" >The username or password is incorrect. Please try again.</p>
   </div>
 </div>
