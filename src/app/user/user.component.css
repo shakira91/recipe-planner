@@ -13,3 +13,28 @@
     right: 0;
     bottom: 0;
 }
+
+h1 {
+    text-shadow: 2px 2px #2d2d2d;
+}
+
+.search-input {
+    height: 80px;
+    font-size: 4em;
+}
+
+.search-button {
+    font-size: 3em;
+    vertical-align: top;
+}
+
+.search-recipes-main {
+    max-width: 900px;
+    margin: 33em auto 0px;
+    color: white;
+}
+
+#guy {
+    position: absolute;
+    right: 25px;
+}

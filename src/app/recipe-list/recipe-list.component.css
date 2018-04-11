@@ -1,22 +1,40 @@
+:host {
+    background: url(/assets/images/237808-P2RBBF-153.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
 h3 {
 	
 }
 
 .recipe-item {
-	background-color: #fff;
+	
 }
 
 .recipe-item div img{
-	margin-left: -30px;
-}
-
-.recipe-preview {
-	padding-left: 10px;
-
+	
 }
 
 .recipe-preview {
 	
+
+}
+
+.recipe-details {
+	position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .search-recipes {

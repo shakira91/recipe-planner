@@ -1,9 +1,12 @@
 <div class="search-recipes">
 	<app-search-recipes *ngIf="savedRecipesLength != 0"></app-search-recipes>
 	<div class="main">
-		<div *ngIf="savedRecipesLength == 0"><p >You do not have any saved recipes yet. Since your favorite cuisine is {{ cuisine }}, maybe try searching for {{ cuisine }} dishes? </p>
-			<input class="" value="{{cuisine}}" type="text" placeholder="Search">
-			<button class="" type="submit" (click)="getRecipes()">Search</button>
+		<div class="search-recipes-main" *ngIf="savedRecipesLength == 0"><h1 >You do not have any saved recipes yet. Since your favorite cuisine is {{ cuisine }}, maybe try searching for {{ cuisine }} dishes? </h1>
+			<input class="search-input" value="{{cuisine}}" type="text" placeholder="Search">
+			<button class="search-button" type="submit" (click)="getRecipes()">Search</button>
+			<div id="guy">
+				<img src="/assets/images/18914-NRXLZJ.png">
+			</div>
 		</div>
 		<div *ngFor="let recipe of savedRecipes; let i = index;">
 			<div>
