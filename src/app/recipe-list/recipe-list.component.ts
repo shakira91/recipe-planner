@@ -26,7 +26,27 @@ export class RecipeListComponent implements OnInit {
   		(data: any) => {
   			this.recipes = data.hits;
   		}
-  	);
+    );
+    
+    document.getElementById("recipe-wrapper").addEventListener("scroll", function() {
+          
+      for (var i = 0; i < document.querySelectorAll(".recipe-item").length; i++) {
+          console.log(document.querySelectorAll(".recipe-item")[i])
+         var bounding = document.querySelectorAll(".recipe-item")[i].getBoundingClientRect()
+    if (bounding.top >= 0 && bounding.left + 500 >= 0 &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    ) {
+       console.log(document.querySelectorAll(".recipe-item")[i])
+    } else {
+        
+    }
+      
+      
+      }
+      
+
+  });
   }
 
 }

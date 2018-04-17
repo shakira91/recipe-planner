@@ -19,15 +19,25 @@ h3 {
 }
 
 .recipe-item {
-	
+	width: 630px;
+    height: 300px;
+    display: inline-block;
+    background: white;
+    margin-left: 10px;
 }
 
-.recipe-item div img{
-	
+#recipe-wrapper {
+	white-space: nowrap;
+	height: 325px;
+	overflow-x: scroll;
+}
+.recipe-image{
+	display: inline-block;
 }
 
 .recipe-preview {
-	
+	display: inline-block;
+	vertical-align: top;
 
 }
 
