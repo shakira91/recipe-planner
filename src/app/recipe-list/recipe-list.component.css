@@ -24,10 +24,11 @@ h3 {
     display: inline-block;
     background:  #f3f3f2;
 	margin-left: 10px;
-	opacity: 0.2;
+	opacity: 0;
 }
 
 .show {
+	transition: 1s ease all;
 	opacity: 1;
 }
 
