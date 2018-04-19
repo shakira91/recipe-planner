@@ -23,7 +23,12 @@ h3 {
     height: 300px;
     display: inline-block;
     background:  #f3f3f2;
-    margin-left: 10px;
+	margin-left: 10px;
+	opacity: 0.2;
+}
+
+.show {
+	opacity: 1;
 }
 
 #recipe-wrapper {

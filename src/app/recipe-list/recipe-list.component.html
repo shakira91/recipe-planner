@@ -4,7 +4,7 @@
 <div *ngIf="!recipes"><p>Gettin' something good.</p></div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<div id="recipe-wrapper">
+<div id="recipe-wrapper" (scroll)="recipesScrolled($event)" #recipeWrapper>
 	<div class="recipe-item" (mouseover)=showRecipe(recipe) *ngFor="let recipe of recipes">
 		<div class="recipe-image">
 			<img [src]="recipe.recipe.image">
