@@ -9,9 +9,9 @@ export class AddRecipeService {
   constructor(private http: Http) { }
 
   addRecipe(recipeDetails) {
-  	const body = {	'image': recipeDetails.image, 
-  					'title': recipeDetails.label,
-  					'ingredients': recipeDetails.ingredientLines,
+  	const body = {	'image': recipeDetails.recipe.image, 
+  					'title': recipeDetails.recipe.label,
+  					'ingredients': recipeDetails.recipe.ingredientLines,
   					'userId' : localStorage.getItem('userId')
   				};
     const headers = new Headers({'Content-Type' : 'application/json'});

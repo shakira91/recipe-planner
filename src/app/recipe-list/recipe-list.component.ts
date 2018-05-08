@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { AuthServiceService } from '../auth/auth-service.service';
 import { Http, Response, RequestOptions, Headers, Jsonp} from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AddRecipeService } from './add-recipe.service'
 import 'rxjs/Rx';
 
 @Component({
@@ -15,7 +16,7 @@ export class RecipeListComponent implements OnInit {
   hovered: boolean = false;
   show: boolean;
   @ViewChild('recipeWrapper') recipeWrapper;
-  constructor(private authService: AuthServiceService, private route: ActivatedRoute, private renderer: Renderer2) { }
+  constructor(private authService: AuthServiceService, private route: ActivatedRoute, private renderer: Renderer2, private addRecipe: AddRecipeService) { }
 
   showRecipe(recipe) {
   	this.hovered = true;
@@ -32,6 +33,18 @@ export class RecipeListComponent implements OnInit {
         this.renderer.addClass(this.recipeWrapper.nativeElement.children[i], "show");
       }
     }
+  }
+  addARecipe(details) {
+    console.log(details)
+  	this.addRecipe.addRecipe(details).subscribe(
+        data => {
+        console.log(data)
+
+      },
+      error => {
+        console.log(error)
+      }
+    );
   }
 
   ngOnInit() {
