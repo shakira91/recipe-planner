@@ -9,7 +9,7 @@ import { AuthServiceService } from '../auth/auth-service.service';
 })
 export class SearchRecipesComponent implements OnInit {
   logo: any = '../assets/images/recipe-book-logo.png';
-  cuisine: string;
+  cuisine: string = '';
   numberOfRecipes: any;
   
   constructor(private auth: AuthServiceService, private router: Router) { }
@@ -19,6 +19,7 @@ export class SearchRecipesComponent implements OnInit {
   	this.router.navigate(["/"]);
   }
   getRecipes() {
+    localStorage.setItem('cuisine', this.cuisine);
     this.router.navigate(['recipes']);
    }
 

@@ -40,8 +40,6 @@ export class RecipeListComponent implements OnInit {
   			this.recipes = data.hits;
   		}
     );
-    
- 
   }
 
 }

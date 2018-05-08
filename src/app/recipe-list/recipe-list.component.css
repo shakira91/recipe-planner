@@ -27,6 +27,11 @@ h3 {
 	opacity: 0;
 }
 
+/* show the first 4 upon page load */
+.recipe-item:nth-child(1), .recipe-item:nth-child(2), .recipe-item:nth-child(3), .recipe-item:nth-child(4) {
+    opacity: 1;
+}
+
 .show {
 	transition: 1s ease all;
 	opacity: 1;
