@@ -9,9 +9,15 @@ nav {
 
 #controls {
     color: white;
-    float: right;
+    float: left;
+}
+
+.nav-search {
+    margin: 30px auto 0px;
+    width: 36.3%;
 }
 
 #logo-small {
     float: left;
+    padding: 20px;
 }
