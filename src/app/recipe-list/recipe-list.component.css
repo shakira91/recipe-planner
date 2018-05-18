@@ -42,15 +42,19 @@ h3 {
 	height: 325px;
 	overflow-x: scroll;
 }
-.recipe-image{
+.recipe-image {
 	display: inline-block;
 }
 
 .recipe-preview {
 	display: inline-block;
 	vertical-align: top;
-
 }
+
+.recipe-preview button {
+	text-align: center;
+}
+
 
 .recipe-details {
 	position: absolute;

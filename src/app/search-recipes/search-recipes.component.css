@@ -10,11 +10,17 @@ nav {
 #controls {
     color: white;
     float: left;
+    margin: 43px auto 0px;
+}
+
+#controls span a{
+    margin-right: 30px;
 }
 
 .nav-search {
     margin: 30px auto 0px;
-    width: 36.3%;
+    float: left;
+    width: 75%;
 }
 
 #logo-small {
