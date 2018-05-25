@@ -10,6 +10,10 @@ h4 {
     font-size: 2em;
 }
 
+h5 {
+    font-size: 1em;
+}
+
 p, span, strong, label, a, li, i, input, em {
     font-size: 1.2em;
 }

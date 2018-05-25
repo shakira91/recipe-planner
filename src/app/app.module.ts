@@ -18,6 +18,7 @@ import { AddUserRecipeComponent } from './user/add-user-recipe/add-user-recipe.c
 import { FileUploadModule } from 'ng2-file-upload';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

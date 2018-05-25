@@ -14,7 +14,7 @@
     bottom: 0;
 }
 
-h3 {
+h5 {
 	
 }
 
@@ -48,7 +48,15 @@ h3 {
 
 .recipe-preview {
 	display: inline-block;
-	vertical-align: top;
+    vertical-align: top;
+    padding: 0px 14px;
+}
+
+.recipe-preview h5 a {
+    max-width: 300px;
+    white-space: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
 }
 
 .recipe-preview button {
@@ -64,4 +72,11 @@ h3 {
 
 .search-recipes {
 	background-color: black;
+}
+
+.ingr-list {
+    white-space: normal;
+    width: 300px;
+    font-size: 14px;
+    min-height: 100px;
 }
