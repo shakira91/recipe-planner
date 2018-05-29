@@ -7,7 +7,7 @@
 <div id="recipe-wrapper" (scroll)="recipesScrolled()" #recipeWrapper>
 	<div class="recipe-item" (mouseover)=showRecipe(recipe) *ngFor="let recipe of recipes; let i = index;">
 		<div class="recipe-image">
-			<img [src]="recipe.recipe.image">
+			<a [href]="recipe.recipe.url" target="_blank"><img [src]="recipe.recipe.image"></a>
 		</div>
 		<div class="recipe-preview">
 			<h5><a [href]="recipe.recipe.url">{{ recipe.recipe.label }}</a></h5>

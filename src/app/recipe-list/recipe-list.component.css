@@ -53,10 +53,14 @@ h5 {
 }
 
 .recipe-preview h5 a {
-    max-width: 300px;
     white-space: normal;
     font-family: 'Source Sans Pro', sans-serif;
     color: black;
+}
+
+.recipe-preview h5  {
+    max-width: 300px;
+   
 }
 
 .recipe-preview button {
