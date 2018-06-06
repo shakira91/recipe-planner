@@ -6,7 +6,8 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     height: 100%;
-    position: fixed;
+    position: absolute;
+    overflow-y: scroll;
     width: 100%;
     left: 0;
     top: 0;
@@ -19,12 +20,13 @@ h5 {
 }
 
 .recipe-item {
-	width: 630px;
+	width: 700px;
     height: 300px;
     display: inline-block;
     background:  #f3f3f2;
 	margin-left: 10px;
-	opacity: 0;
+    opacity: 0;
+    white-space: nowrap;
 }
 
 /* show the first 4 upon page load */
@@ -38,9 +40,10 @@ h5 {
 }
 
 #recipe-wrapper {
-	white-space: nowrap;
-	height: 325px;
-	overflow-x: scroll;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    height: 1000px;
 }
 .recipe-image {
 	display: inline-block;
@@ -99,6 +102,7 @@ h5 {
 }
 
 .add-bubble {
+    color: #3D9970;
     background: white;
     border-radius: 100%;
     color: black;
@@ -121,6 +125,26 @@ h5 {
 
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f138; 
+    opacity: 0.5;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ffffff; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 @-webkit-keyframes slideUp {
     0% {
       transform: translateY(200%);
@@ -140,4 +164,19 @@ h5 {
       opacity: 1;
     }
    }
-
+@media only screen and (max-width: 600px) {
+    .recipe-image {
+        display: block;
+    }
+    .recipe-item{
+        width: 300px;
+        height: 600px;
+        margin-bottom: 20px;
+    }
+    .ingr-list {
+        width: auto;
+    }
+    #recipe-wrapper {
+        width: 320px;
+    }
+}

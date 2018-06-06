@@ -9,21 +9,41 @@ nav {
 
 #controls {
     color: white;
-    float: left;
+    font-family: 'Source Sans Pro', sans-serif;
     margin: 43px auto 0px;
 }
 
-#controls span a{
+#controls span a {
     margin-right: 30px;
+}
+
+#controls span a:hover {
+    color: #3D9970;
+    cursor: pointer;
 }
 
 .nav-search {
     margin: 30px auto 0px;
     float: left;
-    width: 75%;
+    width: 60%;
 }
 
 #logo-small {
     float: left;
     padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    #logo-small {
+        float: none;
+    }
+    .nav-search {
+        margin: 0;
+        float: none;
+        width: auto;
+    }
+    #controls {
+        float: none;
+        margin: 0;
+    }
 }

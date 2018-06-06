@@ -20,12 +20,11 @@ export class SearchRecipesComponent implements OnInit {
   }
   getRecipes() {
     localStorage.setItem('cuisine', this.cuisine);
-    if (this.cuisine) {
-      location.reload();
-    } else {
+    if(this.router.url === '/user/' + localStorage.getItem('userId')) {
       this.router.navigate(['recipes']);
+    } else if (this.router.url === '/recipes') {
+      location.reload();
     }
-    
    }
 
   userRecipes() {

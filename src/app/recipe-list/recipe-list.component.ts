@@ -15,8 +15,10 @@ export class RecipeListComponent implements OnInit {
   recipeDetail: any;
   hovered: boolean = false;
   show: boolean;
+  recipeAdded: boolean;
+  userId: any;
   @ViewChild('recipeWrapper') recipeWrapper;
-  constructor(private authService: AuthServiceService, private route: ActivatedRoute, private renderer: Renderer2, private addRecipe: AddRecipeService) { }
+  constructor(private authService: AuthServiceService, private route: ActivatedRoute, private renderer: Renderer2, private addRecipe: AddRecipeService, private router: Router) { }
 
   showRecipe(recipe) {
   	this.hovered = true;
@@ -35,7 +37,7 @@ export class RecipeListComponent implements OnInit {
     }
   }
   addARecipe(details) {
-    console.log(details)
+    this.recipeAdded = true;
   	this.addRecipe.addRecipe(details).subscribe(
         data => {
         console.log(data)
@@ -47,7 +49,12 @@ export class RecipeListComponent implements OnInit {
     );
   }
 
+  checkRecipes() {
+    this.router.navigate(['../user/' + this.userId]);
+  }
+
   ngOnInit() {
+    this.userId = localStorage.getItem('userId');
   	this.authService.callRecipes(localStorage.getItem('cuisine')).subscribe(
   		(data: any) => {
   			this.recipes = data.hits;

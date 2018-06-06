@@ -6,7 +6,8 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     height: 100%;
-    position: fixed;
+    position: absolute;
+    overflow-y: scroll;
     width: 100%;
     left: 0;
     top: 0;
@@ -30,7 +31,7 @@ h1 {
 
 .search-recipes-main {
     max-width: 900px;
-    margin: 33em auto 0px;
+    margin: 22em auto 0px;
     color: white;
 }
 

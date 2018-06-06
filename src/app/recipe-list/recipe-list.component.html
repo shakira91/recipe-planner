@@ -2,7 +2,7 @@
 	<app-search-recipes></app-search-recipes>
 </div>
 <div *ngIf="!recipes"><p>Gettin' something good.</p></div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <div id="recipe-wrapper" (scroll)="recipesScrolled()" #recipeWrapper>
 	<div class="recipe-item" (mouseover)=showRecipe(recipe) *ngFor="let recipe of recipes; let i = index;">
@@ -16,8 +16,8 @@
 		</div>
 	</div>
 </div>
-<div id="guy" *ngIf="">
-	<p class="add-bubble"><a [routerLink]="user">View your recipes!</a></p>
+<div id="guy" *ngIf="recipeAdded">
+	<p class="add-bubble" (click)="checkRecipes()">Check out your recipes!</p>
 	<p class="bubble-arrow"></p>
 	<img src="/assets/images/18914-NRXLZJ.png">
 </div>
