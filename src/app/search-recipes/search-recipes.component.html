@@ -1,14 +1,16 @@
 <nav>
-	<div class="logo-container">
-		<img src="{{ logo }}" style="width: 200px;" id="logo-small">
-	</div>
-	<div class="nav-search">
-		<input class="" [(ngModel)]="cuisine" value="{{cuisine}}" type="text" placeholder="Search" size="50">
-		<button class="" type="submit" (click)="getRecipes()">Search</button>
-	</div>
-	<div id="controls">
-		<span *ngIf="numberOfRecipes >= 1"><a (click)="userRecipes()">Recipes</a></span>
-		<span><a (click)="onSignOut()">Sign Out</a></span>
+	<div id="nav-wrapper">
+		<div class="logo-container">
+			<img src="{{ logo }}" style="width: 200px;" id="logo-small">
+		</div>
+		<div class="nav-search">
+			<input class="" [(ngModel)]="cuisine" value="{{cuisine}}" type="text" placeholder="Search" size="50">
+			<button class="" type="submit" (click)="getRecipes()">Search</button>
+		</div>
+		<div id="controls">
+			<span *ngIf="numberOfRecipes >= 1"><a (click)="userRecipes()">Recipes</a></span>
+			<span><a (click)="onSignOut()">Sign Out</a></span>
+		</div>
 	</div>
 </nav>
 		

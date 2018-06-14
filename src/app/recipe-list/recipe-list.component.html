@@ -1,16 +1,17 @@
 <div class="search-recipes">
 	<app-search-recipes></app-search-recipes>
 </div>
-<div *ngIf="!recipes"><p>Gettin' something good.</p></div>
+
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <div id="recipe-wrapper" (scroll)="recipesScrolled()" #recipeWrapper>
+	<div class="loading" *ngIf="!recipes"><div class="spinner"><div class="dot1"></div><div class="dot2"></div></div></div>
 	<div class="recipe-item" (mouseover)=showRecipe(recipe) *ngFor="let recipe of recipes; let i = index;">
 		<div class="recipe-image">
 			<a [href]="recipe.recipe.url" target="_blank"><img [src]="recipe.recipe.image"></a>
 		</div>
 		<div class="recipe-preview">
-			<h5><a [href]="recipe.recipe.url">{{ recipe.recipe.label }}</a></h5>
+			<h5><a [href]="recipe.recipe.url" alt="CLick for more details">{{ recipe.recipe.label }}</a></h5>
 			<p class="ingr-list">{{ recipe.recipe.ingredientLines }}</p>
 			<button (click)="addARecipe(recipe)">Add to your Recipes</button>
 		</div>

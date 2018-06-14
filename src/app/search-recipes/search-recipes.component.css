@@ -10,7 +10,7 @@ nav {
 #controls {
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
-    margin: 43px auto 0px;
+    padding: 35px 0;
 }
 
 #controls span a {
@@ -20,6 +20,10 @@ nav {
 #controls span a:hover {
     color: #3D9970;
     cursor: pointer;
+}
+
+#nav-wrapper {
+    margin: 0 95px;
 }
 
 .nav-search {
