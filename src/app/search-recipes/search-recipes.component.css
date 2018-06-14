@@ -1,3 +1,7 @@
+input[type=text] {
+    width: 50%;
+}
+
 nav {
     background: black;
     text-align: center;

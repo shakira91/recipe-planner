@@ -11,7 +11,7 @@
 			<a [href]="recipe.recipe.url" target="_blank"><img [src]="recipe.recipe.image"></a>
 		</div>
 		<div class="recipe-preview">
-			<h5><a [href]="recipe.recipe.url" alt="CLick for more details">{{ recipe.recipe.label }}</a></h5>
+			<h5><a [href]="recipe.recipe.url" title="Click for more details" target="_blank">{{ recipe.recipe.label }}</a></h5>
 			<p class="ingr-list">{{ recipe.recipe.ingredientLines }}</p>
 			<button (click)="addARecipe(recipe)">Add to your Recipes</button>
 		</div>
