@@ -3,7 +3,7 @@ input[type=text] {
 }
 
 nav {
-    background: black;
+    background: #1b1b1b;
     text-align: center;
     position: fixed;
     width: 100%;

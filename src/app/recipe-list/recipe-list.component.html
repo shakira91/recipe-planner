@@ -3,8 +3,8 @@
 </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-<div id="recipe-wrapper" (scroll)="recipesScrolled()" #recipeWrapper>
+<div class="search-recipes-main"><h1 >Scroll for deliciousness....</h1>
+<div id="recipe-wrapper"  #recipeWrapper>
 	<div class="loading" *ngIf="!recipes"><div class="spinner"><div class="dot1"></div><div class="dot2"></div></div></div>
 	<div class="recipe-item" (mouseover)=showRecipe(recipe) *ngFor="let recipe of recipes; let i = index;">
 		<div class="recipe-image">
