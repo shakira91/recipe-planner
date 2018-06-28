@@ -27,7 +27,7 @@ export class AddUserRecipeComponent implements OnInit {
   addRecipe() {
     const body = {formData: this.addRecipeForm.value, image: this.newImage, userId: localStorage.getItem('userId')};
     const headers = new Headers({'Content-Type' : 'application/json'});
-    return this.http.post('http://127.0.0.1:3000/add', body)
+    return this.http.post('/add', body)
     .map((response: Response) => response.json())
     .catch((error: Response) => Observable.throw(error.json())
     ).subscribe(

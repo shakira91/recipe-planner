@@ -25,7 +25,7 @@ export class DeleteRecipeComponent implements OnInit {
     this.router.navigate(['user/' + localStorage.getItem('userId')]);
     const body = {userId: localStorage.getItem('userId'), image: this.recipeImage, title: this.recipeTitle, ingredients: this.recipeIngredients};
     const headers = new Headers({'Content-Type' : 'application/json'});
-    return this.http.post('http://127.0.0.1:3000/delete', body)
+    return this.http.post('/delete', body)
     .map((response: Response) => response.json())
     .catch((error: Response) => Observable.throw(error.json())
     ).subscribe(

@@ -24,7 +24,7 @@ export class AuthServiceService {
   signIn(userData: User) {
     const body = JSON.stringify(userData);
     const headers = new Headers({'Content-Type' : 'application/json'});
-    return this.http.post('http://127.0.0.1:3000/signin', body, {headers: headers})
+    return this.http.post('/signin', body, {headers: headers})
     .map((response: Response) => response.json())
     .catch((error: Response) => Observable.throw(error.json())
     );
@@ -33,7 +33,7 @@ export class AuthServiceService {
   signUp(userData: User) {
   	const body = JSON.stringify(userData);
     const headers = new Headers({'Content-Type' : 'application/json'});
-    return this.http.post('http://127.0.0.1:3000/signup', body, {headers: headers})
+    return this.http.post('/signup', body, {headers: headers})
     .map((response: Response) => response.json())
     .catch((error: Response) => Observable.throw(error.json())
     );
