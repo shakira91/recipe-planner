@@ -114,41 +114,23 @@ h5 {
     font-size: 14px;
 }
 
-#guy {
-    opacity: 0;
+#check-recipes {
+    background: #3d9970;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    bottom: -45px;
+    position: fixed;
+    width: 100%;
+    font-weight: bold;
+    padding: 1px;
+    cursor: pointer;
+    border: 1px solid #2e7757;
     -webkit-animation: slideUp 0.9s 1;
     animation: slideUp 0.9s 1;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s;
-    position: absolute;
-    right: 25px;
-    bottom: -100px;
-}
-
-.add-bubble {
-    color: #3D9970;
-    background: white;
-    border-radius: 100%;
-    color: black;
-    padding: 40px;
-    text-align: center;
-    font-family: 'Source Sans Pro', sans-serif;
-    cursor: pointer;
-}
-
-.bubble-arrow {
-    width: 50px;
-    height: 0px;
-    border-bottom: 35px solid transparent;
-    border-top: 13px solid transparent;
-    border-right: 21px solid white;
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    top: 99px;
-
 }
 
 ::-webkit-scrollbar {
@@ -176,7 +158,7 @@ h5 {
       transform: translateY(200%);
     }
     100% {
-      transform: translateY(-10%);
+      transform: translateY(-50%);
       opacity: 1;
     }
   }
@@ -186,7 +168,7 @@ h5 {
       transform: translateY(200%);
     }
     100% {
-      transform: translateY(-10%);
+      transform: translateY(-50%);
       opacity: 1;
     }
    }

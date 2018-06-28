@@ -1,0 +1,40 @@
+:host {
+    background: url(/assets/images/237808-P2RBBF-153.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100%;
+    position: absolute;
+    overflow-y: scroll;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+form {
+    max-width: 630px;
+    margin: 100px auto;
+    height: 385px;
+    background: #ffffffc9;
+    cursor: pointer;
+    padding: 30px;
+}
+
+input {
+    width: 90%;
+    display: block;
+    margin-top: 15px;
+}
+
+textarea {
+    border-radius: 5px;
+    padding: 0px 10px;
+    border: 1px solid #0000002b;
+    height: 100px;
+    width: 90%;
+    
+}

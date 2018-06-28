@@ -17,6 +17,8 @@
 
 h1 {
     text-shadow: 2px 2px #2d2d2d;
+    color: white;
+    text-align: center;
 }
 
 .search-input {
@@ -33,6 +35,10 @@ h1 {
     max-width: 900px;
     margin: 22em auto 0px;
     color: white;
+}
+
+.user-main {
+    width: 800px;
 }
 
 #guy {
@@ -71,6 +77,63 @@ h1 {
 
 }
 
+.saved-recipe {
+    max-width: 800px;
+    height: 200px;
+    background: #f3f3f2;
+    margin: 8px;
+    clear: both;
+}
+
+.saved-details {
+    padding: 30px;
+}
+
+.saved-recipe h5 {
+    white-space: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+    max-width: 300px;
+}
+
+.saved-recipe img {
+    float: right;
+    width: 200px;
+}
+
+.user-options {
+    white-space: normal;
+    font-size: 14px;
+}
+
+#check-recipes {
+    background: #3d9970;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    bottom: -11px;
+    position: fixed;
+    width: 100%;
+    font-weight: bold;
+    padding: 1px;
+    cursor: pointer;
+    border: 1px solid #2e7757;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.delete-recipe {
+    float: right;
+    margin-top: 2px;
+    font-size: 14px;
+    text-decoration: underline;
+    color: red;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
 @-webkit-keyframes slideUp {
     0% {
       transform: translateY(200%);
@@ -90,4 +153,14 @@ h1 {
       opacity: 1;
     }
    }
+
+   @media only screen and (max-width: 600px) {
+    .user-main {
+        width: auto;
+    }
+    .saved-recipe {
+        height: auto;
+    }
+}
+
 

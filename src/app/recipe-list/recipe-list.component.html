@@ -3,8 +3,8 @@
 </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<div class="search-recipes-main"><h1 >Scroll for deliciousness....</h1>
 <div id="recipe-wrapper"  #recipeWrapper>
+<div class="search-recipes-main"><h1>Scroll for deliciousness....</h1>
 	<div class="loading" *ngIf="!recipes"><div class="spinner"><div class="dot1"></div><div class="dot2"></div></div></div>
 	<div class="recipe-item" (mouseover)=showRecipe(recipe) *ngFor="let recipe of recipes; let i = index;">
 		<div class="recipe-image">
@@ -17,10 +17,8 @@
 		</div>
 	</div>
 </div>
-<div id="guy" *ngIf="recipeAdded">
-	<p class="add-bubble" (click)="checkRecipes()">Check out your recipes!</p>
-	<p class="bubble-arrow"></p>
-	<img src="/assets/images/18914-NRXLZJ.png">
+<div id="check-recipes" *ngIf="recipeAdded">
+	<p (click)="checkRecipes()">Check out your recipes!</p>
 </div>
 <!-- <div class="recipe-details" *ngIf="hovered">
 	<app-recipe-details [details]="recipeDetail"></app-recipe-details>

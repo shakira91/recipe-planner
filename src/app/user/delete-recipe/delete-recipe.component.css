@@ -1,0 +1,29 @@
+:host {
+    background: url(/assets/images/237808-P2RBBF-153.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100%;
+    position: absolute;
+    overflow-y: scroll;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#delete-wrapper {
+    max-width: 630px;
+    margin: 100px auto;
+    background: #ffffffc9;
+    padding: 30px;
+}
+
+h5 {
+    white-space: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+}
