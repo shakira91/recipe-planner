@@ -12,7 +12,7 @@ const user = require('./routes/user');
 const uploadImg = require('./routes/upload-image');
 
 const mongoose = require('mongoose');
-mongoose.connect('localhost:27017/users');
+mongoose.connect('/users');
 
 
 const app = express();
@@ -24,7 +24,7 @@ app.set('view engine', 'hbs');
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname, 'app')));
+app.use(express.static(path.join(__dirname, '/dist/index.html')));
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
