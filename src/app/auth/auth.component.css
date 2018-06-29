@@ -48,18 +48,18 @@ button {
 
 .login-screen {
     opacity: 0;
-    -webkit-animation: slideUp 0.9s 1;
-    animation: slideUp 0.9s 1;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-delay: 0.5s;
-    animation-delay: 0.5s;
     max-width: 630px;
     margin: 100px auto;
     height: 650px;
     background: #ffffffc9;
     cursor: pointer;
     text-align: center;
+    -webkit-animation: slideUp 0.9s 1;
+    animation: slideUp 0.9s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
 }
 
 .bold-me {
