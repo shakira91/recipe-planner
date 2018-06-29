@@ -17,7 +17,9 @@
 
 				<div class="saved-details">
 					<h5>{{ recipe[1] }}</h5>
-					<h5>{{ recipe[2] }}</h5>
+					<div (click)="!show = show">Show Ingredients
+						<p *ngIf="show">{{ recipe[2] }}</p>
+					</div>
 					<div class="user-options">
 						<p><a>Add this recipe to your calendar </a></p>				
 						<label>Month</label> 			

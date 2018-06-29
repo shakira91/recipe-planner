@@ -19,9 +19,9 @@ export class UserComponent implements OnInit {
   day: string;
   year: string;
   addeventatc: any;
+  show: boolean = false;
 
   constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
-
 
   deleteRecipe(recipe, index) {
     localStorage.setItem('recipe-index', index);
