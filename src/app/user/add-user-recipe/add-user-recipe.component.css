@@ -19,7 +19,7 @@ form {
     max-width: 630px;
     margin: 100px auto;
     height: 385px;
-    background: #ffffffc9;
+    background: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     padding: 30px;
 }
