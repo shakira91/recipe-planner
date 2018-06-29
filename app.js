@@ -12,7 +12,7 @@ const user = require('./routes/user');
 const uploadImg = require('./routes/upload-image');
 
 const mongoose = require('mongoose');
-mongoose.connect('/users');
+mongoose.connect('mongodb://kira:wheels1234@ds121341.mlab.com:21341/r_users'); 
 
 
 const app = express();
