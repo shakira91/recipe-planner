@@ -25,6 +25,7 @@ app.set('view engine', 'hbs');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static('public'));
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
