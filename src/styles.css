@@ -26,7 +26,7 @@ a:hover, a:button {
     cursor: pointer;
 }
 
-input[type=text] {
+input[type=text], input[type=password], input[type=email] {
     border-radius: 5px;
     padding: 0px 10px;
     border: 1px solid #0000002b;
@@ -88,6 +88,10 @@ img {
 
 .error {
     color: red;
+}
+
+.cursor {
+    cursor: pointer;
 }
 
 .typed-cursor {
