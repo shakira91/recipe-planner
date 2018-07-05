@@ -45,6 +45,7 @@ button {
 
 button:disabled {
     background: #3d9970b8;
+    opacity: 0.5;
 }
 
 img {

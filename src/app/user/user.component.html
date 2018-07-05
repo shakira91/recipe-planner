@@ -17,7 +17,7 @@
 
 				<div class="saved-details">
 					<h5>{{ recipe[1] }}</h5>
-					<div (click)="!show = show">Show Ingredients
+					<div (click)="show = !show">Show Ingredients
 						<p *ngIf="show">{{ recipe[2] }}</p>
 					</div>
 					<div class="user-options">
