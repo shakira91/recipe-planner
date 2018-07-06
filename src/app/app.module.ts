@@ -39,7 +39,7 @@ import { FileUploadModule } from 'ng2-file-upload';
        { path: 'add/:id', component: AddUserRecipeComponent },
   		 { path: 'recipes', component: RecipeListComponent },
        { path: '', component: AuthComponent },
-  	]),
+  	],{ useHash: true }),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
