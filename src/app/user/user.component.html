@@ -5,9 +5,9 @@
 			<input class="search-input" value="{{cuisine}}" type="text" placeholder="Search">
 			<button class="search-button" type="submit" (click)="getRecipes()">Search</button>
 			<p class="speech-bubble"></p>
-			<div id="check-recipes">
+			<!-- <div id="check-recipes">
 				<p><a (click)="addUserRecipe()">You can also add your own recipe!</a></p>
-			</div>
+			</div> -->
 		</div>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<div *ngFor="let recipe of savedRecipes; let i = index;">
