@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 
-var DIR = './public/uploads/';
+var DIR = 'public/uploads/';
 
 var upload = multer({dest: DIR}).single('photo');
 
