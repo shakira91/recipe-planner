@@ -7,7 +7,7 @@ router.post('/', (req, res, next) => {
 	User.findByIdAndUpdate(req.body.userId, 		
 		{
 			"$push": {
-			  recipes: [ req.body.image, req.body.formData.title, req.body.formData.ingredients ],
+			  recipes: [ req.body.formData.title, req.body.formData.ingredients ],
 			}
 		},(err, user) => {
     if (err) {

@@ -3,8 +3,8 @@
       <div><img [src]=""></div> <!--upload new img-->
       <div>
         <label for="file">Choose an Image File</label>
-        <input type="file" id="imgFile" name="photo" ng2FileSelect [uploader]="uploader">
-        <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">Upload</button>
+        <input type="file" id="imgFile" name="photo">
+        <button type="button" class="btn btn-success btn-s" (change)="fileEvent($event)">Upload</button>
       </div>
       <input type="text" formControlName="title" name="title" [value]="">
       <br>
