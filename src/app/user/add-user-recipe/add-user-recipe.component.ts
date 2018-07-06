@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
 import { FileUploader } from 'ng2-file-upload';
 
-const URL = 'http://127.0.0.1:3000/uploadImg';
+const URL = '/uploadImg';
 
 @Component({
   selector: 'app-add-user-recipe',
