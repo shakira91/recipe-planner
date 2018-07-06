@@ -38,7 +38,7 @@ export class AddUserRecipeComponent implements OnInit {
   }
 
   fileEvent(event){
-    console.log(event.target)
+    console.log(event.target.files[0].name)
   }
 
   addingCanceled() {
