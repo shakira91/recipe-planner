@@ -3,8 +3,8 @@
       <div><img [src]=""></div> <!--upload new img-->
       <div>
         <label for="file">Choose an Image File</label>
-        <input type="file" id="imgFile" name="photo">
-        <button type="button" class="btn btn-success btn-s" (change)="fileEvent($event)">Upload</button>
+        <input type="file" id="imgFile" name="photo" (change)="fileEvent($event)">
+        <button type="button" class="btn btn-success btn-s">Upload</button>
       </div>
       <input type="text" formControlName="title" name="title" [value]="">
       <br>
