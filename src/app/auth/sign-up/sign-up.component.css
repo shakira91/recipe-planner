@@ -3,3 +3,20 @@
     left: 100px;
     top: 150px;
 }
+
+.form-group {
+    max-width: 400px;
+}
+
+.form-control input[type=text] {
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .form-group {
+        margin: 60px 0px 30px -50px;
+    }
+    .form-control input[type=text] {
+        width: 75%;
+    }
+}

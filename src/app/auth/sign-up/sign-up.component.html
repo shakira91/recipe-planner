@@ -2,22 +2,22 @@
   <div class="sign-up">
     <form class="" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <input type="text" class="form-control" id="fname" required formControlName="fname" placeholder="First Name" size="50">
+        <input type="text" class="form-control" id="fname" required formControlName="fname" placeholder="First Name">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="lname" required formControlName="lname" placeholder="Last Name" size="50">
+        <input type="text" class="form-control" id="lname" required formControlName="lname" placeholder="Last Name">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="username" required formControlName="username" placeholder="Username" size="50">
+        <input type="text" class="form-control" id="username" required formControlName="username" placeholder="Username">
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" id="password" required formControlName="password" placeholder="Password" size="50">
+        <input type="password" class="form-control" id="password" required formControlName="password" placeholder="Password">
       </div>
       <div class="form-group">
-        <input type="email" class="form-control" id="email" required formControlName="email" placeholder="Email Address" size="50">
+        <input type="email" class="form-control" id="email" required formControlName="email" placeholder="Email Address">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="qOne" required formControlName="qOne" placeholder="Favorite Cuisine" size="50">
+        <input type="text" class="form-control" id="qOne" required formControlName="qOne" placeholder="Favorite Cuisine">
       </div>
       <button type="submit" [disabled]="!signUpForm.valid" class="btn">Submit</button>
     </form>
