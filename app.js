@@ -55,6 +55,3 @@ app.listen(port, function() {
     console.log("App is running on port " + port);
 });
 
-setInterval(function() {
-    http.get("http://recipe-delights.herokuapp.com");
-}, 300000);
